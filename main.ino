@@ -25,8 +25,12 @@ void loop() {
   //pokemonEggHatching.eggHatch(10240);
     
   //pokemonExtra.boxRelease(5);
-  pokemonExtra.diggerBrothers();
+  //pokemonExtra.diggerBrothers();
   //pokemonExtra.wattFarming();
+  //pokemonExtra.fossilPokemon("arctovish", 20);
+  //pokemonExtra.stowOnSideBargain();
+  //pokemonExtra.lottoFarm();
+  pokemonExtra.evTrain("hp", "attack");
 }
 
 

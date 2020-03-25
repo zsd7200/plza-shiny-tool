@@ -17,14 +17,15 @@ class PokemonExtra {
   /**
  * WattFarming farms watts from a fountain
  * by changing the date forward and collecting watts
- * repeatedly.
+ * repeatedly. Setup information is available on github. 
  */
   void wattFarming();
 
   /**
  * BoxRelease releases a set number of boxes of pokemon
  * before stalling indefinitely to avoid accidental
- * releases.
+ * releases. The cursor must be placed on the top left 
+ * corner of the first box to be released. 
  * 
  * Parameters
  * 
@@ -36,6 +37,62 @@ class PokemonExtra {
  * Spams A to get rewards from the digger brothers
  */
   void diggerBrothers();
+
+    /**
+  * fossilPokemon gets a set number of fossil pokemon
+  * from the fossil lady on route six as long as you have 
+  * enough fossils in your inventory. The player must be 
+  * standing in front of the fossil lady with enough
+  * fossils. 
+  * 
+  * Parameters
+  * 
+  * fossilName: name of fossil pokemon to get
+  * possible names: arctozolt, arctovish, dracovish, dracozolt 
+  * 
+  * fossilAmount: number of fossils you want 
+  */
+  void fossilPokemon(String fossilName, const int fossilAmount);
+  
+  /**
+ * stowOnSideBargain farms the stow on side bargain
+ * repeatedly using the date/time exploit. 
+ * The user must have a lot of money and be in 
+ * front of the daily bargain man. 
+ */
+  void stowOnSideBargain();
+
+  /**
+ * berryFarm farms a berry tree repeatedly using
+ * the date/time exploit. The player must be in
+ * front of a berry tree. 
+ */
+  void berryFarm(); 
+
+  /**
+ * lottoFarm farms the lotto repeatedly using
+ * the date/time exploit. The player must be in 
+ * front of a PC. 
+ */
+  void lottoFarm();
+
+  /**
+  * evTrain uses the data/time exploit and poke jobs 
+  * system to farm max EVs for two values. The pokemon
+  * must be in a 2x5 grid starting at the top left
+  * of the first box and the date must be set to
+  * the start of the month. 
+  * 
+  * Parameters
+  * 
+  * firstEV: first EV to farm
+  * secondEV: secondEV to farm 
+  * Possible values: hp, attack, defense, spatk, spdef, speed
+  * 
+  */
+  void evTrain(String firstEV, String secondEV);
+
+
 
   private:
 

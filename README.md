@@ -2,21 +2,46 @@
 
 This is a controller emulator anchored on [FluffyMadness' Fight Stick project](https://github.com/fluffymadness/ATMega32U4-Switch-Fightstick) and [Palatis' Arduino LUFA](https://github.com/Palatis/Arduino-Lufa). This particular repository is home to scripts that deal with Pokemon Sword and Shield. This is only compatible with ATMega32U4 based boards and compatibility is not planned.  
 
-| Script  | Status | Speed | 
-| ------------- | ------------- | ------------- |
-| 2560 Egg Step Hatching  | Complete  | -/1 eggs |
-| 3840 Egg Step Hatching  | Complete  | -/1 eggs |
-| 5120 Egg Step Hatching  | Complete  | -/2 eggs |
-| 6400 Egg Step Hatching  | Complete  | -/2 eggs |
-| 7680 Egg Step Hatching  | Complete  | -/3 eggs |
-| 8960 Egg Step Hatching  | Complete  | -/3 eggs |
-| 10240 Egg Step Hatching  | Complete  | -/4 eggs |
-| Box release | Complete | - |
-| Digger brothers | Complete | - |
-| Watt farming | Complete | -/2000 Watts |
+The benefits of this project over the other sword/shield projects you can find online
 
+1. Programmed in C++
+1. Programmed in the Arduino IDE (easier compatibility with arduino peripherals)
+1. Better memory management (all scripts can fit onto a single board vs one script per program)
+1. Better/more sensible looping - scripts are easier to understand, write, and loop since switch statements are not used
+
+
+| Script  | Status |
+| ------------- | ------------- |
+| 2560 Egg Step Hatching  | Complete  | 
+| 3840 Egg Step Hatching  | Complete  | 
+| 5120 Egg Step Hatching  | Complete  | 
+| 6400 Egg Step Hatching  | Complete  |
+| 7680 Egg Step Hatching  | Complete  |
+| 8960 Egg Step Hatching  | Complete  |
+| 10240 Egg Step Hatching  | Complete  |
+| Box release | Complete |
+| Digger brothers | Complete |
+| Watt farming | Complete |
+| Fossil revive  | Complete |
+| Berry farming | Complete |
+| Stow on side bargain farming | Complete |
+| Lotto farming | Complete |
+| EV Training | Complete/not fully tested |
+| EXP Job farming | Planned |
+
+## Flashing instructions
+
+If you're just looking to use the code, it's all available in the form of hex files. Flashing those is probably a bit easier and less painful than installing Arduino LUFA. 
+
+You can download the hex files [here](https://github.com/ironandstee1/pkmn-hexes/tree/master/swemu-plus-plus). You'll probably need to clone the repository to get them, but the one's you want are located in the swemu-plus-plus folder. 
+
+[Here](https://www.youtube.com/watch?v=TzfHGD3JPSo) is a video on how to flash these hex files to your device. 
+
+[Here](https://www.youtube.com/watch?v=ymstv13uoAo) is a video on how to set up in game. 
 
 ## Building Instructions
+
+This is for people who are looking to develop further or use this code themselves. 
 
 - Download Arduino IDE (I used 1.8.2, other versions should work)
 - Download Arduino LUFA from https://github.com/Palatis/Arduino-Lufa and follow the instructions on its repository to set it up. Note: these are not easy and it'll take some time to get this ready to go
@@ -57,20 +82,49 @@ The egg hatching script is robust enough that it will not fail if the nursery la
 1. Stand in front of the digger brothers
 1. Unplug your controller and plug in your board
 
+### Fossil revive
+
+1. Go to the fossil lady with enough fossils in your bag for the number you specified in the program
+1. Save before you plug in assuming you are shiny hunting
+1. Plug in your board
+
+### Berry farming
+
+1. Perform date/time exploit listed in watt farming steps 3-6
+1. Stand in front of a berry tree
+1. Plug in your board
+
+### Lotto farming
+
+1. Perform date/time exploit listed in watt farming steps 3-6
+1. Stand in front of a PC
+1. Plug in your board
+
+### EV training
+
+1. Perform date/time exploit listed in watt farming steps 3-6
+1. Put the pokemon you want to be trained in the first box of the PC in a 2x5 grid from the top left
+1. Stand in front of a PC
+1. Change the date forward once and return to the game
+1. Plug in your board
 
 ## Progress
 
-All desired features complete. 
+All desired features complete. I'm just adding extra scripts whenever I feel like it at this point. 
 
 ## Future work (in order)
 
 - Figure out battle tower scripting if possible
-- Add extra scripts I guess?
+- Hammer out training via pokemon jobs
+- Automate raiding 
 
 ## How can you help?
 
 - Fork this for yourself and do something cool with it
 - Hit me up with ideas on twitter @ironandstee1
+- Send me the IDs of some broken battle tower teams (attack heavy/no setup required please)
+
+If you have a suggested feature it'd be best to open an issue or dm me on twitter. 
 
 ### Credits
 
