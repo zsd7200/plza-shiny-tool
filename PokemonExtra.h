@@ -91,6 +91,28 @@ class PokemonExtra {
   * 
   */
   void evTrain(String firstEV, String secondEV);
+  
+  /**
+  * pokejobs uses the data/time exploit to farm exp and items. The pokemon
+  * must be in a 2x4 grid starting at the top left
+  * of the first box and the date must be set to 1/1/ 
+  * any year. The user must have not checked the jobs 
+  * since the day changed. The user must be in front of a pc. 
+  * 
+  */
+  void pokeJobs();
+
+  /**
+  * championsCup repeatedly competes in the champions cup to farm rare balls. 
+  * The script only uses the first attack and g maxing, so strong single
+  * move pokemon like fishous rend dracovish are recommended. The first 
+  * two pokemon will be soloing the cup, so they have to be the 
+  * strongest. 
+  * 
+  */
+  void championsCup();
+  
+
 
 
 

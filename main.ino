@@ -30,7 +30,9 @@ void loop() {
   //pokemonExtra.fossilPokemon("arctovish", 20);
   //pokemonExtra.stowOnSideBargain();
   //pokemonExtra.lottoFarm();
-  pokemonExtra.evTrain("hp", "attack");
+  //pokemonExtra.evTrain("hp", "spatk");
+  //pokemonExtra.pokeJobs();
+  pokemonExtra.championsCup();
 }
 
 

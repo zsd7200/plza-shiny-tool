@@ -294,6 +294,92 @@ void PokemonExtra::evTrain(String firstEV, String secondEV) {
   return;
 }
 
+void PokemonExtra::pokeJobs() {
+  
+  for (int i = 0; i < 5; i++) {
+    while (general.PressOneButton(general.B_BUTTON, 150, 150));
+  }
+  while (general.LeftJoystick(general.STICK_CENTER, general.UP, 300, 200));
+  for (int j = 0; j < 2; j++) {
+    while (general.PressOneButton(general.A_BUTTON, 150, 1000));   
+  }   
+  while (general.LeftJoystick(general.STICK_CENTER, general.DOWN, 100, 200));
+  while (general.LeftJoystick(general.STICK_CENTER, general.DOWN, 100, 200));
+  while (general.PressOneButton(general.A_BUTTON, 150, 2500));
+  while (general.PressOneButton(general.A_BUTTON, 150, 400));
+  while (general.PressOneButton(general.A_BUTTON, 150, 400));
+  while (1) {
+    while (general.PressOneButton(general.A_BUTTON, 150, 800));
+    while (general.PressOneButton(general.A_BUTTON, 150, 800));
+    while (general.PressOneButton(general.A_BUTTON, 150, 800));
+    while (general.PressOneButton(general.A_BUTTON, 150, 800));
+    while (general.PressOneButton(general.Y_BUTTON, 150, 100));
+    for (int k = 0; k < 4; k++) {
+      while (general.PressOneButton(general.A_BUTTON, 150, 100));
+      while (general.LeftJoystick(general.RIGHT, general.STICK_CENTER, 150, 100));  
+    }
+    while (general.LeftJoystick(general.LEFT, general.STICK_CENTER, 150, 100)); 
+    while (general.LeftJoystick(general.STICK_CENTER, general.DOWN, 150, 100));
+    for (int l = 0; l < 4; l++) {
+      while (general.PressOneButton(general.A_BUTTON, 150, 100));
+      while (general.LeftJoystick(general.LEFT, general.STICK_CENTER, 150, 100));  
+    }
+    while (general.PressOneButton(general.B_BUTTON, 150, 400));
+    while (general.PressOneButton(general.A_BUTTON, 150, 1200));
+    while (general.PressOneButton(general.X_BUTTON, 2, 2500));
+    while (general.PressOneButton(general.A_BUTTON, 150, 1200));
+    while (general.LeftJoystick(general.STICK_CENTER, general.DOWN, 150, 100));
+    while (general.PressOneButton(general.A_BUTTON, 150, 6000));
+    while (general.PressOneButton(general.A_BUTTON, 150, 5000));
+    if(day < 25) {
+      dayChange();
+      day++; 
+    }
+    else if (month < 12) {
+      monthChange();
+      month++;
+      day = 0;
+    }
+    else {
+      yearChange();
+      month = 0;
+      day = 0;
+    }
+    while (general.PressOneButton(general.A_BUTTON, 150, 300));
+    while (general.PressOneButton(general.A_BUTTON, 150, 5000));
+    for (int l = 0; l < 35; l++) {
+      while (general.PressOneButton(general.B_BUTTON, 150, 300));      
+    }
+    for (int j = 0; j < 2; j++) {
+      while (general.PressOneButton(general.A_BUTTON, 150, 1000));   
+    }   
+    while (general.LeftJoystick(general.STICK_CENTER, general.DOWN, 100, 200));
+    while (general.LeftJoystick(general.STICK_CENTER, general.DOWN, 100, 200));
+    while (general.PressOneButton(general.A_BUTTON, 150, 2500));
+    while (general.PressOneButton(general.A_BUTTON, 150, 400));
+    while (general.PressOneButton(general.A_BUTTON, 150, 400));
+  }
+  return;
+}
+
+void PokemonExtra::championsCup() {
+    while (general.LeftJoystick(general.STICK_CENTER, general.UP, 200, 150));
+    while (general.LeftJoystick(general.STICK_CENTER, general.UP, 200, 150));
+    while (general.LeftJoystick(general.STICK_CENTER, general.UP, 4000, 200));
+    for (int i = 0; i < 4; i++) {
+     while (general.LeftJoystick(general.STICK_CENTER, general.UP, 300, 200));      
+    }
+    while (general.PressOneButton(general.A_BUTTON, 150, 150));
+    while (general.PressOneButton(general.A_BUTTON, 150, 150));
+    while (general.PressOneButton(general.B_BUTTON, 150, 150));
+    while (general.PressOneButton(general.B_BUTTON, 150, 150));
+    while (general.PressOneButton(general.B_BUTTON, 150, 150));
+    for (int j = 0; j < 100; j++) {
+      while (general.PressOneButton(general.A_BUTTON, 150, 150));   
+      while (general.PressOneButton(general.A_BUTTON, 150, 150));          
+    }
+}
+
 void PokemonExtra::monthChange() {
   toDateTimeSettings();
   while (general.LeftJoystick(general.STICK_CENTER, general.UP, 200, 100));

@@ -12,13 +12,15 @@ The benefits of this project over the other sword/shield projects you can find o
 
 | Script  | Status |
 | ------------- | ------------- |
-| 2560 Egg Step Hatching  | Complete  | 
-| 3840 Egg Step Hatching  | Complete  | 
-| 5120 Egg Step Hatching  | Complete  | 
-| 6400 Egg Step Hatching  | Complete  |
-| 7680 Egg Step Hatching  | Complete  |
-| 8960 Egg Step Hatching  | Complete  |
-| 10240 Egg Step Hatching  | Complete  |
+| 2560 egg Step hatching  | Complete  | 
+| 3840 egg Step hatching  | Complete  | 
+| 5120 egg Step hatching  | Complete  | 
+| 6400 egg Step hatching  | Complete  |
+| 7680 egg Step hatching  | Complete  |
+| 8960 egg Step hatching  | Complete  |
+| 10240 egg step hatching  | Complete  |
+| Egg collecting | Planned |
+| Box hatching | Planned |
 | Box release | Complete |
 | Digger brothers | Complete |
 | Watt farming | Complete |
@@ -26,8 +28,9 @@ The benefits of this project over the other sword/shield projects you can find o
 | Berry farming | Complete |
 | Stow on side bargain farming | Complete |
 | Lotto farming | Complete |
-| EV Training | Complete/not fully tested |
-| EXP Job farming | Planned |
+| EV training | Complete |
+| Poke job farming | Complete/untested |
+| Champions cup farming | Complete/not fully tested |
 
 ## Flashing instructions
 
@@ -108,6 +111,20 @@ The egg hatching script is robust enough that it will not fail if the nursery la
 1. Change the date forward once and return to the game
 1. Plug in your board
 
+### Poke job exp training
+
+1. Perform date/time exploit listed in watt farming steps 3-6
+1. Put the pokemon you want to be trained in the first box of the PC in a 2x4 grid from the top left
+1. Stand in front of a PC
+1. Change the date forward once and return to the game
+1. Plug in your board
+
+### Champions cup farming
+
+1. Get a team of 3 or so pokemon that will mostly one hit your champions cup opponents. I use a maxed out ev dracovish, eternatus, etc. The first move on every pokemon must be a really strong one (fishous rend, etc)
+1. Stand in front of the champions cup desk but just a little bit away
+1. Plug in your board
+
 ## Progress
 
 All desired features complete. I'm just adding extra scripts whenever I feel like it at this point. 
@@ -129,6 +146,8 @@ If you have a suggested feature it'd be best to open an issue or dm me on twitte
 ### Credits
 
 fluffymadness, this is a fork of his repo after all
+
+fluffymadness also thanked:
 
 Special thanks to shinyquagsire's and progmem's reverseengineering work for the pokken tournament controller. (https://github.com/progmem/Switch-Fightstick)
 
