@@ -14,12 +14,22 @@ class General {
   
   General::General() {}
 
+  /// Handles LUFA related USB tasks
   void handleUSB();
 
-  void FullTask();
-
-  void SetupDelay();
-
+  bool PressOneButton(int button, unsigned long pressDuration, unsigned long waitDuration);
+  bool PressTwoButtons(int buttonOne, int buttonTwo, unsigned long pressDuration, unsigned long waitDuration);
+  bool LeftJoystick(int joystickXVal, int joystickYVal, unsigned long joystickDuration, unsigned long waitDuration);
+  bool LeftJoystickOneButton(int joystickXVal, int joystickYVal, int button, unsigned long joystickDuration, unsigned long waitDuration);
+  bool LeftJoystickTwoButtons(int joystickXVal, int joystickYVal, int buttonOne, int buttonTwo, unsigned long joystickDuration, unsigned long waitDuration);
+  bool RightJoystick(int joystickXVal, int joystickYVal, unsigned long joystickDuration, unsigned long waitDuration);
+  bool RightJoystickOneButton(int joystickXVal, int joystickYVal, int button, unsigned long joystickDuration, unsigned long waitDuration);
+  bool RightJoystickTwoButtons(int joystickXVal, int joystickYVal, int buttonOne, int buttonTwo, unsigned long joystickDuration, unsigned long waitDuration);
+  bool BothJoysticks(int leftJoystickXVal, int leftJoystickYVal, int rightJoystickXVal, int rightJoystickYVal, unsigned long joystickDuration, unsigned long waitDuration);
+  bool BothJoysticksOneButton(int leftJoystickXVal, int leftJoystickYVal, int rightJoystickXVal, int rightJoystickYVal, int button, unsigned long joystickDuration, unsigned long waitDuration);
+  bool BothJoysticksTwoButtons(int leftJoystickXVal, int leftJoystickYVal, int rightJoystickXVal, int rightJoystickYVal, int buttonOne, int buttonTwo, unsigned long joystickDuration, unsigned long waitDuration);
+  bool Nothing(unsigned long waitDuration);
+  
   int STICK_MIN = 0;
   int STICK_CENTER = 128;
   int STICK_MAX = 255;
@@ -49,28 +59,8 @@ class General {
   int HOME_BUTTON = 0x1000;
   int CAPTURE_BUTTON = 0x2000;
 
-  bool PressOneButton(int button, unsigned long pressDuration, unsigned long waitDuration);
-  bool PressTwoButtons(int buttonOne, int buttonTwo, unsigned long pressDuration, unsigned long waitDuration);
-  bool LeftJoystick(int joystickXVal, int joystickYVal, unsigned long joystickDuration, unsigned long waitDuration);
-  bool LeftJoystickOneButton(int joystickXVal, int joystickYVal, int button, unsigned long joystickDuration, unsigned long waitDuration);
-  bool LeftJoystickTwoButtons(int joystickXVal, int joystickYVal, int buttonOne, int buttonTwo, unsigned long joystickDuration, unsigned long waitDuration);
-  bool RightJoystick(int joystickXVal, int joystickYVal, unsigned long joystickDuration, unsigned long waitDuration);
-  bool RightJoystickOneButton(int joystickXVal, int joystickYVal, int button, unsigned long joystickDuration, unsigned long waitDuration);
-  bool RightJoystickTwoButtons(int joystickXVal, int joystickYVal, int buttonOne, int buttonTwo, unsigned long joystickDuration, unsigned long waitDuration);
-  bool BothJoysticks(int leftJoystickXVal, int leftJoystickYVal, int rightJoystickXVal, int rightJoystickYVal, unsigned long joystickDuration, unsigned long waitDuration);
-  bool BothJoysticksOneButton(int leftJoystickXVal, int leftJoystickYVal, int rightJoystickXVal, int rightJoystickYVal, int button, unsigned long joystickDuration, unsigned long waitDuration);
-  bool BothJoysticksTwoButtons(int leftJoystickXVal, int leftJoystickYVal, int rightJoystickXVal, int rightJoystickYVal, int buttonOne, int buttonTwo, unsigned long joystickDuration, unsigned long waitDuration);
-
   unsigned long previousMillis = 0; 
   unsigned long currentMillis = millis();
-
-  bool ShortHop(); // Does a single short hop
-  bool FullHop(); // Does a single full hop
-  bool FastFall(int mult); // Fast falls with variable length
-  void ShortHopFastFall(); // Short hop fast falls with support for changing fast fall point
-  void FullHopFastFall(); // Full hop fast falls with support for changing fast fall point
-
-  bool Nothing(unsigned long waitDuration);
 
   private:
 

@@ -4,15 +4,14 @@
 #include "General.h"
 #include "PokemonEggHatching.h"
 #include "PokemonExtra.h"
+#include "SimpleScripting.h"
 
-General general; // Creates an instance of general input class
 PokemonEggHatching pokemonEggHatching; // Creates an instance of pokemon egg hatching class
 PokemonExtra pokemonExtra; // Creates an instance of pokemon extra class
 
 void setup() {
   SetupHardware(); // Needed for LUFA
   GlobalInterruptEnable(); // Needed for LUFA
-  //general.SetupDelay(); // Currently broken
 }
 
 void loop() {
@@ -32,7 +31,29 @@ void loop() {
   //pokemonExtra.lottoFarm();
   //pokemonExtra.evTrain("hp", "spatk");
   //pokemonExtra.pokeJobs();
-  pokemonExtra.championsCup();
+  //pokemonExtra.championsCup();
+
+  simpleScript();
+}
+
+// For writing simple scripts, use this function and call to it in the main. 
+void simpleScript() {
+  using namespace simple;
+  
+  Left(1000);
+  Nothing(1000);
+  Right(1000);
+  Nothing(1000);
+  Up(1000);
+  Nothing(1000);
+  X(1000);
+  Nothing(1000);
+  Y(1000);
+  Nothing(1000);
+  A(1000);
+  Nothing(1000);
+  B(1000);
+  Nothing(1000);
 }
 
 

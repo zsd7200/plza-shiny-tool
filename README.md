@@ -50,6 +50,31 @@ This is for people who are looking to develop further or use this code themselve
 - Download Arduino LUFA from https://github.com/Palatis/Arduino-Lufa and follow the instructions on its repository to set it up. Note: these are not easy and it'll take some time to get this ready to go
 - Upload this program to the Arduino. Every time you want to change the program you'll have to flash the original firmware first. [Here's a video on it](https://www.youtube.com/watch?v=JZtzIyXm98Q). 
 
+## Scripting instructions
+
+If you want to create your own scripts, I've included a function called ```simpleScript``` in the main.ino file. Simply make the ```simpleScript();``` the only function call in main and write a script such as
+
+```  
+Left(1000);
+Nothing(1000);
+Right(1000);
+Nothing(1000);
+Up(1000);
+Nothing(1000);
+X(1000);
+Nothing(1000);
+Y(1000);
+Nothing(1000);
+A(1000);
+Nothing(1000);
+B(1000);
+Nothing(1000);
+```
+
+to execute it! This example is aleady provided in the source code. 
+
+If you would like to see the available functions or configure the wait time after every function, check out the SimpleScripting.h header. You can also create classes and functions as I did if that's your preference. 
+
 ## In-game setup instructions
 
 ### Egg Hatching
