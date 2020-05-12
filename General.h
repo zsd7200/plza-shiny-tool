@@ -17,6 +17,9 @@ class General {
   /// Handles LUFA related USB tasks
   void handleUSB();
 
+  /// Delay added to avoid startup issues
+  void setupDelay();
+
   bool PressOneButton(int button, unsigned long pressDuration, unsigned long waitDuration);
   bool PressTwoButtons(int buttonOne, int buttonTwo, unsigned long pressDuration, unsigned long waitDuration);
   bool LeftJoystick(int joystickXVal, int joystickYVal, unsigned long joystickDuration, unsigned long waitDuration);
