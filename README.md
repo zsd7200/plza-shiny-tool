@@ -83,7 +83,7 @@ This will change the timing slightly to accomodate slower load times. This is un
 - Other fast travel points (cafes, Pokémon Centers, etc.)
 - Physical button matrix code
 
-### Credits
+## Credits
 
 All credits go to ironandstee1 as well as fluffymadness for their original projects.
 
