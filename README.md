@@ -30,13 +30,13 @@ This is only compatible with ATMega32U4 based boards (Arduino Leonardo, Arduino 
 
 ## Flashing Instructions
 
-Coming soon.
+Precompiled code coming soon--currently there is no way to interface with this outside of editing the main loop.
 
 ## Building Instructions
 
 - Download the [Arduino IDE](https://www.arduino.cc/en/software/) (tested on 1.8.19 and 2.3.6)
 - Download [Arduino LUFA](https://github.com/Palatis/Arduino-Lufa) and follow the instructions on its repository to set it up.
-- Upload this program to the Arduino. If you experience issues with flashing, try flashing the Blink example project, then flashing this project again.
+- Open `plza-shiny-tool.ino` in the Arduino IDE, select your board type and serial port, then upload code to board.
 
 ## Scripting Instructions
 
@@ -66,6 +66,10 @@ If you would like to see the available functions or configure the wait time afte
 ## Usage
 
 Uncomment your desired Wild Zone from `plza-shiny-tool.ino`, then flash the firmware to your device.
+
+If using a Switch 1, add `false` into the parameters of the function. (IE - `wildZone.Eighteen()` becomes `wildZone.Eighteen(false);`)
+
+This will change the timing slightly to accomodate slower load times. This is untested and theoretical.
 
 ## In-Game Setup Instructions
 
