@@ -17,6 +17,10 @@ class Simple {
     void Right(unsigned long timeHeld, unsigned long afterDelay = 200);
     void Up(unsigned long timeHeld, unsigned long afterDelay = 200);
     void Down(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void RStickLeft(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void RStickRight(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void RStickUp(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void RStickDown(unsigned long timeHeld, unsigned long afterDelay = 200);
     void A(unsigned long timeHeld, unsigned long afterDelay = 200);
     void B(unsigned long timeHeld, unsigned long afterDelay = 200);
     void X(unsigned long timeHeld, unsigned long afterDelay = 200);

@@ -16,6 +16,22 @@ void Simple::Down(unsigned long timeHeld, unsigned long afterDelay = 200) {
   while (general.LeftJoystick(general.STICK_CENTER, general.DOWN, timeHeld, afterDelay) == true);
 }
 
+void Simple::RStickLeft(unsigned long timeHeld, unsigned long afterDelay = 200) {
+  while (general.RightJoystick(general.LEFT, general.STICK_CENTER, timeHeld, afterDelay) == true);
+}
+
+void Simple::RStickRight(unsigned long timeHeld, unsigned long afterDelay = 200) {
+  while (general.RightJoystick(general.RIGHT, general.STICK_CENTER, timeHeld, afterDelay) == true);
+}
+
+void Simple::RStickUp(unsigned long timeHeld, unsigned long afterDelay = 200) {
+  while (general.RightJoystick(general.STICK_CENTER, general.UP, timeHeld, afterDelay) == true);
+}
+
+void Simple::RStickDown(unsigned long timeHeld, unsigned long afterDelay = 200) {
+  while (general.RightJoystick(general.STICK_CENTER, general.DOWN, timeHeld, afterDelay) == true);
+}
+
 void Simple::A(unsigned long timeHeld, unsigned long afterDelay = 200) {
   while (general.PressOneButton(general.A_BUTTON, timeHeld, afterDelay));   
 }

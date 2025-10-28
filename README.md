@@ -5,38 +5,42 @@ method in Pokémon Legends: Z-A.
 
 This is only compatible with ATMega32U4 based boards (Arduino Leonardo, Arduino Pro Micro) and compatibility is not planned.  
 
-| Script        | Status |
+| zoneId        | Location/Function |
 | ------------- | ------------- |
-| Wild Zone 1   | Complete | 
-| Wild Zone 2   | Complete | 
-| Wild Zone 3   | Complete | 
-| Wild Zone 4   | Complete | 
-| Wild Zone 5   | Complete | 
-| Wild Zone 6   | Complete | 
-| Wild Zone 7   | Complete | 
-| Wild Zone 8   | Complete | 
-| Wild Zone 9   | Complete | 
-| Wild Zone 10  | Complete | 
-| Wild Zone 11  | Complete | 
-| Wild Zone 12  | Complete | 
-| Wild Zone 13  | Complete | 
-| Wild Zone 14  | Complete | 
-| Wild Zone 15  | Complete | 
-| Wild Zone 16  | Complete | 
-| Wild Zone 17  | Complete | 
-| Wild Zone 18  | Complete | 
-| Wild Zone 19  | Complete | 
-| Wild Zone 20  | Complete | 
+| 1             | Wild Zone 1   |
+| 2             | Wild Zone 2   |
+| 3             | Wild Zone 3   |
+| 4             | Wild Zone 4   |
+| 5             | Wild Zone 5   |
+| 6             | Wild Zone 6   |
+| 7             | Wild Zone 7   |
+| 8             | Wild Zone 8   |
+| 9             | Wild Zone 9   |
+| 10            | Wild Zone 10  |
+| 11            | Wild Zone 11  |
+| 12            | Wild Zone 12  |
+| 13            | Wild Zone 13  |
+| 14            | Wild Zone 14  |
+| 15            | Wild Zone 15  |
+| 16            | Wild Zone 16  |
+| 17            | Wild Zone 17  |
+| 18            | Wild Zone 18  |
+| 19            | Wild Zone 19  |
+| 20            | Wild Zone 20  |
+| 50            | Refresh Map Location (Pokémon Center, Building, Cafe)  |
+| 999           | `simpleScript()` |
 
 ## Flashing Instructions
 
 Precompiled code coming soon--currently there is no way to interface with this outside of editing the main loop.
 
-## Building Instructions
+## Building / Usage Instructions
 
-- Download the [Arduino IDE](https://www.arduino.cc/en/software/) (tested on 1.8.19 and 2.3.6)
-- Download [Arduino LUFA](https://github.com/Palatis/Arduino-Lufa) and follow the instructions on its repository to set it up.
-- Open `plza-shiny-tool.ino` in the Arduino IDE, select your board type and serial port, then upload code to board.
+1. Download the [Arduino IDE](https://www.arduino.cc/en/software/) (tested on 1.8.19 and 2.3.6)
+2. Download [Arduino LUFA](https://github.com/Palatis/Arduino-Lufa) and follow the instructions on its repository to set it up.
+3. Open `plza-shiny-tool.ino` in the Arduino IDE, select your board type and serial port.
+4. Set `zoneId` equal to the desired Wild Zone's number, or other ID from table (coming soon).
+5. If using a Switch 1, set `switchTwo` to false. This will adjust loading times to accommodate for slower load speeds on Switch 1. (This is untested and theoretical--may not be needed).
 
 ## Scripting Instructions
 
@@ -63,14 +67,6 @@ to execute it! This example is aleady provided in the source code.
 
 If you would like to see the available functions or configure the wait time after every function, check out the SimpleScripting.h header. You can also create classes and functions as I did if that's your preference. 
 
-## Usage
-
-Uncomment your desired Wild Zone from `plza-shiny-tool.ino`, then flash the firmware to your device.
-
-If using a Switch 1, add `false` into the parameters of the function. (IE - `wildZone.Eighteen()` becomes `wildZone.Eighteen(false);`)
-
-This will change the timing slightly to accomodate slower load times. This is untested and theoretical.
-
 ## In-Game Setup Instructions
 
 ### Wild Zone x
@@ -80,7 +76,7 @@ This will change the timing slightly to accomodate slower load times. This is un
 
 ## Todo
 
-- Other fast travel points (cafes, Pokémon Centers, etc.)
+- Remove prereq to fly to destination first.
 - Physical button matrix code
 
 ## Credits

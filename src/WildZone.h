@@ -5,6 +5,7 @@
 #include <LUFA.h>
 #include "Joystick.h"
 #include "Descriptors.h"
+#include "WaitTimes.h"
 #include "SimpleScripting.h"
 
 using namespace std;

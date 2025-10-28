@@ -3,14 +3,19 @@
 #include "src/Joystick.h"
 #include "src/General.h"
 #include "src/WildZone.h"
+#include "src/MapLocations.h"
 #include "src/SimpleScripting.h"
 
 Simple simple;
 WildZone wildZone;
+MapLocations mapLocations;
 
 // set desired wild zone number / area ID here
 // or set to 999 for simpleScript
 int zoneId = -1;
+
+// set to false if using a switch 1
+bool switchTwo = true;
 
 void setup() {
   SetupHardware(); // Needed for LUFA
@@ -22,64 +27,67 @@ void setup() {
 void loop() {
   switch (zoneId) {
     case 1:
-      wildZone.One();
+      wildZone.One(switchTwo);
       break;
     case 2:
-      wildZone.Two();
+      wildZone.Two(switchTwo);
       break;
     case 3:
-      wildZone.Three();
+      wildZone.Three(switchTwo);
       break;
     case 4:
-      wildZone.Four();
+      wildZone.Four(switchTwo);
       break;
     case 5:
-      wildZone.Five();
+      wildZone.Five(switchTwo);
       break;
     case 6:
-      wildZone.Six();
+      wildZone.Six(switchTwo);
       break;
     case 7:
-      wildZone.Seven();
+      wildZone.Seven(switchTwo);
       break;
     case 8:
-      wildZone.Eight();
+      wildZone.Eight(switchTwo);
       break;
     case 9:
-      wildZone.Nine();
+      wildZone.Nine(switchTwo);
       break;
     case 10:
-      wildZone.Ten();
+      wildZone.Ten(switchTwo);
       break;
     case 11:
-      wildZone.Eleven();
+      wildZone.Eleven(switchTwo);
       break;
     case 12:
-      wildZone.Twelve();
+      wildZone.Twelve(switchTwo);
       break;
     case 13:
-      wildZone.Thirteen();
+      wildZone.Thirteen(switchTwo);
       break;
     case 14:
-      wildZone.Fourteen();
+      wildZone.Fourteen(switchTwo);
       break;
     case 15:
-      wildZone.Fifteen();
+      wildZone.Fifteen(switchTwo);
       break;
     case 16:
-      wildZone.Sixteen();
+      wildZone.Sixteen(switchTwo);
       break;
     case 17:
-      wildZone.Seventeen();
+      wildZone.Seventeen(switchTwo);
       break;
     case 18:
-      wildZone.Eighteen();
+      wildZone.Eighteen(switchTwo);
       break;
     case 19:
-      wildZone.Nineteen();
+      wildZone.Nineteen(switchTwo);
       break;
     case 20:
-      wildZone.Twenty();
+      wildZone.Twenty(switchTwo);
+      break;
+    case 50:
+      mapLocations.Refresh(switchTwo);
       break;
     case 999:
       simpleScript();
