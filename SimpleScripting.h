@@ -9,71 +9,30 @@
 
 using namespace std;
 
-namespace simple {
-  General general;
-  unsigned long afterDelay = 200; // Choose the ms delay after inputs occur
-  
-  void Left(unsigned long timeHeld) {
-    while (general.LeftJoystick(general.LEFT, general.STICK_CENTER, timeHeld, afterDelay) == true);
-  }
+class Simple {
+  public:
+    Simple::Simple() {}
 
-  void Right(unsigned long timeHeld) {
-    while (general.LeftJoystick(general.LEFT, general.STICK_CENTER, timeHeld, afterDelay) == true);
-  }
+    void Left(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void Right(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void Up(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void Down(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void A(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void B(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void X(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void Y(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void ZL(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void ZR(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void LB(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void RB(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void Home(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void Capture(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void Plus(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void Minus(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void Nothing(unsigned long timeHeld, unsigned long afterDelay = 200);
 
-  void Up(unsigned long timeHeld) {
-    while (general.LeftJoystick(general.STICK_CENTER, general.UP, timeHeld, afterDelay) == true);
-  }
-
-  void Down(unsigned long timeHeld) {
-    while (general.LeftJoystick(general.STICK_CENTER, general.DOWN, timeHeld, afterDelay) == true);
-  }
-
-  void A(unsigned long timeHeld) {
-    while (general.PressOneButton(general.A_BUTTON, timeHeld, afterDelay));   
-  }
-
-  void B(unsigned long timeHeld) {
-    while (general.PressOneButton(general.B_BUTTON, timeHeld, afterDelay));   
-  }
-
-  void X(unsigned long timeHeld) {
-    while (general.PressOneButton(general.X_BUTTON, timeHeld, afterDelay));   
-  }
-
-  void Y(unsigned long timeHeld) {
-    while (general.PressOneButton(general.Y_BUTTON, timeHeld, afterDelay));   
-  }
-
-  void ZL(unsigned long timeHeld) {
-    while (general.PressOneButton(general.ZL_BUTTON, timeHeld, afterDelay));   
-  }
-  
-  void ZR(unsigned long timeHeld) {
-    while (general.PressOneButton(general.ZR_BUTTON, timeHeld, afterDelay));   
-  }
-
-  void LB(unsigned long timeHeld) {
-    while (general.PressOneButton(general.LB_BUTTON, timeHeld, afterDelay));   
-  }
-  
-  void RB(unsigned long timeHeld) {
-    while (general.PressOneButton(general.RB_BUTTON, timeHeld, afterDelay));   
-  }
-
-  void Home(unsigned long timeHeld) {
-    while (general.PressOneButton(general.HOME_BUTTON, timeHeld, afterDelay));   
-  }
-
-  void Capture(unsigned long timeHeld) {
-    while (general.PressOneButton(general.CAPTURE_BUTTON, timeHeld, afterDelay));   
-  }
-
-  void Nothing(unsigned long timeHeld) {
-    while (general.Nothing(timeHeld));
-  }
-}
-
-
+  private:
+    General general;
+};
 
 #endif
