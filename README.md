@@ -65,12 +65,12 @@ If you would like to see the available functions or configure the wait time afte
 
 ## Usage
 
-Uncomment your desired Wild Area from `plza-shiny-tool.ino`, then flash the firmware to your device.
+Uncomment your desired Wild Zone from `plza-shiny-tool.ino`, then flash the firmware to your device.
 
 ## In-Game Setup Instructions
 
-### Wild Area x
-1. Fly to desired Wild Area.
+### Wild Zone x
+1. Fly to desired Wild Zone.
 2. Unplug/disconnect all other controllers/attach Joy-Cons to console.
 3. Plug in Arduino.
 

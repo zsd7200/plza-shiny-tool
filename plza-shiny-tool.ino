@@ -16,7 +16,7 @@ void setup() {
 }
 
 void loop() {
-  // uncomment your desired Wild Area
+  // uncomment your desired Wild Zone
   //wildzone.One();
   //wildzone.Two();
   //wildzone.Three();
