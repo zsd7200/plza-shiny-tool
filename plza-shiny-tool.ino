@@ -14,14 +14,29 @@ MapLocations mapLocations;
 
 // set desired wild zone number / area ID here
 // or set to 999 for simpleScript
-int zoneId = 18;
+int zoneId = 0;
 
 // set to false if using a switch 1
 bool switchTwo = true;
 
+// set to false if not using a physical button matrix
+bool usingMatrix = false;
+
+const int ROWS = 5;
+const int COLS = 5;
+const int DEBOUNCE_MS = 5;
+
+const int rowPins[ROWS] = { 5, 6, 7, 8, 9 };
+const int colPins[COLS] = { 10, 16, 14, 15, A0 };
+
+bool keyState[ROWS][COLS];
+bool lastKeyState[ROWS][COLS];
+unsigned long lastChangeTime[ROWS][COLS];
+
+
 bool hasTraveled;
 
-// For writing simple scripts, use this function and call to it in the main. 
+// For writing simple scripts, use this function and call to it in the main.
 void simpleScript() {
   simple.Left(1000);
 }
@@ -29,14 +44,31 @@ void simpleScript() {
 void setup() {
   SetupHardware(); // Needed for LUFA
   GlobalInterruptEnable(); // Needed for LUFA
-  Serial1.begin(9600);
-  pinMode(2, OUTPUT);
   hasTraveled = false;
+
+  for (int i = 0; i < COLS; i++) {
+    pinMode(colPins[i], INPUT_PULLUP);
+  }
+
+  for (int i = 0; i < ROWS; i++) {
+    pinMode(rowPins[i], INPUT);
+  }
+
+  for (int i = 0; i < ROWS; i++) {
+    for (int j = 0; j < COLS; j++) {
+      keyState[i][j] = lastKeyState[i][j] = false;
+      lastChangeTime[i][j] = 0;
+    }
+  }
 }
 
 void loop() {
-  if (!hasTraveled) {
+  if (!hasTraveled && zoneId > 0) {
     return travelTo(zoneId);
+  }
+
+  if (usingMatrix) {
+    scanMatrix();
   }
 
   switch (zoneId) {
@@ -175,6 +207,147 @@ void travelTo(int zone) {
       break;
     case 20:
       wildZone.Twenty(switchTwo);
+      break;
+    default:
+      break;
+  }
+}
+
+void scanMatrix() {
+  for (int i = 0; i < ROWS; i++) {
+    pinMode(rowPins[i], OUTPUT);
+    digitalWrite(rowPins[i], LOW);
+
+    for (int j = 0; j < COLS; j++) {
+      bool pressed = (digitalRead(colPins[j]) == LOW);
+
+      if (pressed != lastKeyState[i][j]) {
+        lastChangeTime[i][j] = millis();
+        lastKeyState[i][j] = pressed;
+      }
+
+      if ((millis() - lastChangeTime[i][j]) > DEBOUNCE_MS) {
+        if (pressed != keyState[i][j]) {
+          keyState[i][j] = pressed;
+          if (pressed) {
+            handleButton(i, j);
+          }
+        }
+      }
+    }
+
+    pinMode(rowPins[i], INPUT);
+  }
+}
+
+void handleButton(int row, int col) {
+  hasTraveled = false;
+
+  switch (row) {
+    case 0:
+      switch (col) {
+        case 0:
+          zoneId = 1;
+          break;
+        case 1:
+          zoneId = 2;
+          break;
+        case 2:
+          zoneId = 3;
+          break;
+        case 3:
+          zoneId = 4;
+          break;
+        case 4:
+          zoneId = 5;
+          break;
+        default:
+          break;
+      }
+      break;
+    case 1:
+      switch (col) {
+        case 0:
+          zoneId = 6;
+          break;
+        case 1:
+          zoneId = 7;
+          break;
+        case 2:
+          zoneId = 8;
+          break;
+        case 3:
+          zoneId = 9;
+          break;
+        case 4:
+          zoneId = 10;
+          break;
+        default:
+          break;
+      }
+      break;
+    case 2:
+      switch (col) {
+        case 0:
+          zoneId = 11;
+          break;
+        case 1:
+          zoneId = 12;
+          break;
+        case 2:
+          zoneId = 13;
+          break;
+        case 3:
+          zoneId = 14;
+          break;
+        case 4:
+          zoneId = 15;
+          break;
+        default:
+          break;
+      }
+      break;
+    case 3:
+      switch (col) {
+        case 0:
+          zoneId = 16;
+          break;
+        case 1:
+          zoneId = 17;
+          break;
+        case 2:
+          zoneId = 18;
+          break;
+        case 3:
+          zoneId = 19;
+          break;
+        case 4:
+          zoneId = 20;
+          break;
+        default:
+          break;
+      }
+      break;
+    case 4:
+      switch (col) {
+        case 0:
+          zoneId = 50;
+          break;
+        case 1:
+          zoneId = 999;
+          break;
+        case 2:
+          zoneId = 0;
+          break;
+        case 3:
+          zoneId = 0;
+          break;
+        case 4:
+          zoneId = 0;
+          break;
+        default:
+          break;
+      }
       break;
     default:
       break;
