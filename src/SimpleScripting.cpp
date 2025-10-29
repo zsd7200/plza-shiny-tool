@@ -83,3 +83,10 @@ void Simple::Minus(unsigned long timeHeld, unsigned long afterDelay = 200) {
 void Simple::Nothing(unsigned long timeHeld, unsigned long afterDelay = 200) {
   while (general.Nothing(timeHeld));
 }
+
+void Simple::MapTravel(boolean switchTwo = true) {
+  A(100);
+  Nothing(TEXT_WAIT);
+  A(100);
+  Nothing(switchTwo ? SWITCH_TWO_WAIT : SWITCH_ONE_WAIT);
+}

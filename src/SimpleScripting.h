@@ -6,6 +6,7 @@
 #include "Joystick.h"
 #include "Descriptors.h"
 #include "General.h"
+#include "WaitTimes.h"
 
 using namespace std;
 
@@ -34,6 +35,7 @@ class Simple {
     void Plus(unsigned long timeHeld, unsigned long afterDelay = 200);
     void Minus(unsigned long timeHeld, unsigned long afterDelay = 200);
     void Nothing(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void MapTravel(boolean switchTwo = true);
 
   private:
     General general;
