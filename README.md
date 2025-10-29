@@ -70,14 +70,13 @@ If you would like to see the available functions or configure the wait time afte
 ## In-Game Setup Instructions
 
 ### Wild Zone x
-1. Fly to desired Wild Zone.
-2. Unplug/disconnect all other controllers/attach Joy-Cons to console.
-3. Plug in Arduino.
+1. Unplug/disconnect all other controllers/attach Joy-Cons to console.
+2. Plug in Arduino.
 
 ## Todo
 
-- Remove prereq to fly to destination first.
 - Physical button matrix code
+- Add coords for non-wild area fly locations
 
 ## Credits
 
