@@ -1,14 +1,12 @@
 #include "WildZone.h"
 
 void WildZone::One(boolean switchTwo = true) {
-  Nothing(5000);
   Right(1100);
   Down(1750);
   MapTravel(switchTwo);
 };
 
 void WildZone::Two(boolean switchTwo = true) {
-  Nothing(5000);
   Right(1100);
   Down(1200);
   MapTravel(switchTwo);
@@ -75,7 +73,6 @@ void WildZone::Seventeen(boolean switchTwo = true) {
 };
 
 void WildZone::Eighteen(boolean switchTwo = true) {
-  Nothing(5000);
   Right(275);
   Down(275);
   MapTravel(switchTwo);
