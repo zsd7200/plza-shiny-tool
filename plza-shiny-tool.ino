@@ -21,6 +21,11 @@ bool switchTwo = true;
 
 bool hasTraveled;
 
+// For writing simple scripts, use this function and call to it in the main. 
+void simpleScript() {
+  simple.Left(1000);
+}
+
 void setup() {
   SetupHardware(); // Needed for LUFA
   GlobalInterruptEnable(); // Needed for LUFA
@@ -104,11 +109,6 @@ void loop() {
     default:
       break;
   }
-}
-
-// For writing simple scripts, use this function and call to it in the main. 
-void simpleScript() {
-  simple.Left(1000);
 }
 
 void travelTo(int zone) {

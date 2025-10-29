@@ -7,8 +7,8 @@ void MapLocations::TopLeft() {
   Nothing(MAP_LOAD_WAIT);
   RStickDown(50);
   RStickDown(50);
-  Up(4000);
-  Left(4000);
+  Up(2000);
+  Left(2000);
 };
 
 void MapLocations::Refresh(boolean switchTwo = true) {
