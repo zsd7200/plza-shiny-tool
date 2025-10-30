@@ -25,3 +25,17 @@ void MapLocations::Refresh(boolean switchTwo = true) {
   A(100);
   Nothing(switchTwo ? SWITCH_TWO_WAIT : SWITCH_ONE_WAIT);
 };
+
+void MapLocations::Bench(boolean switchTwo = true) {
+  Down(50);
+  A(100);
+  Nothing(TEXT_WAIT);
+  A(100);
+  Nothing(YES_WAIT);
+  A(100);
+  Nothing(TEXT_WAIT);
+  A(100);
+  Nothing(YES_WAIT);
+  A(100);
+  Nothing(switchTwo ? SWITCH_TWO_DAY_NIGHT_CYCLE_WAIT : SWITCH_ONE_DAY_NIGHT_CYCLE_WAIT);
+}

@@ -34,6 +34,8 @@ unsigned long lastChangeTime[ROWS][COLS];
 
 // determines whether or not the map should be zeroed before refreshing
 bool hasTraveled;
+const int BENCH_ZONE = 60;
+const int SCRIPT_ZONE = 999;
 
 // after some testing, this might not be necessary
 bool switchTwo;
@@ -67,6 +69,10 @@ void setup() {
 }
 
 void loop() {
+  if (!hasTraveled && (zoneId == BENCH_ZONE || zoneId == SCRIPT_ZONE)) {
+    hasTraveled = true;
+  }
+
   if (!hasTraveled && zoneId > 0) {
     return travelTo(zoneId);
   }
@@ -135,6 +141,9 @@ void loop() {
         break;
       case 50:
         mapLocations.Refresh(switchTwo);
+        break;
+      case 60:
+        mapLocations.Bench(switchTwo);
         break;
       case 999:
         simpleScript();
@@ -342,7 +351,8 @@ void handleButton(int row, int col) {
           zoneId = 50;
           break;
         case 1:
-          zoneId = 999;
+          zoneId = 60;
+          hasTraveled = true;
           break;
         case 2:
           zoneId = 0;
@@ -351,7 +361,8 @@ void handleButton(int row, int col) {
           zoneId = 0;
           break;
         case 4:
-          zoneId = 0;
+          zoneId = 999;
+          hasTraveled = true;
           break;
         default:
           break;

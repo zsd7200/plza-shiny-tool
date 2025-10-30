@@ -31,11 +31,16 @@ You can use different pins or a different board, but you will have to adjust the
 
 ### Wild Zone x
 1. Ensure that the game is not about to enter a new day/night cycle.
-1. Unplug/disconnect all other controllers/attach Joy-Cons to console.
-2. Plug in Arduino.
-3. If using button matrix, push desired button.
+2. Unplug/disconnect all other controllers/attach Joy-Cons to console.
+3. Plug in Arduino.
+4. If using button matrix, push desired button.
 
 **Note: You may need to unplug/replug the Arduino in to select a new area.**
+
+### Bench
+The best way to refresh a bench is to use it once before plugging in the Arduino. This will position you perfectly for the bench refresh script.
+
+**Note: You may experience a 20-second or so delay before the first bench refresh occurs. This is normal.**
 
 ## Scripting Instructions
 
