@@ -13,15 +13,15 @@ WildZoneRefresh wildZoneRefresh;
 MapLocations mapLocations;
 
 // set to false if using a switch 1
-bool switchTwo = true;
+bool switchTwo = false;
 
 // set to false if not using a physical button matrix
-bool usingMatrix = true;
+bool usingMatrix = false;
 
 // set desired wild zone number / area ID here
 // or set to 999 for simpleScript
 // if using button matrix, can leave this set to 0
-int zoneId = 0;
+int zoneId = 4;
 
 // button matrix vars
 const int ROWS = 5;
