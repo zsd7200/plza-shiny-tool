@@ -16,7 +16,7 @@ MapLocations mapLocations;
 bool switchTwo = false;
 
 // set to false if not using a physical button matrix
-bool usingMatrix = false;
+bool usingMatrix = true;
 
 // set desired wild zone number / area ID here
 // or set to 999 for simpleScript
