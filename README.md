@@ -22,7 +22,8 @@ You can use different pins or a different board, but you will have to adjust the
 1. Download the [Arduino IDE](https://www.arduino.cc/en/software/) (tested on 1.8.19 and 2.3.6)
 2. Download [Arduino LUFA](https://github.com/Palatis/Arduino-Lufa) and follow the instructions on its repository to set it up.
 3. Open `plza-shiny-tool.ino` in the Arduino IDE, select your board type and serial port.
-4. If using a Switch 1, set `switchTwo` to `false`. This will adjust loading times to accommodate for slower load speeds on Switch 1. (This is untested and theoretical--may not be needed). If this is set to `false`, it **will** still work with Switch 2, but will be slower.
+4. If using a Switch 2, set `switchTwo` to `true`. This will adjust loading times to accommodate for faster load speeds on Switch 2.
+    - If using device on a mix of Switch 1 and Switch 2 systems, keep `switchTwo` set to `false`.
     - **If using a button matrix, skip to step 7. Otherwise, continue.**
 5. Set `buttonMatrix` to `false`.
 6. Set `zoneId` equal to the desired Wild Zone's number, or other ID from [this table](https://github.com/zsd7200/plza-shiny-tool/blob/master/ZONE_ID.md) (coming soon).
