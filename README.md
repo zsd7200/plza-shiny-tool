@@ -9,7 +9,7 @@ Designed to be interfaced with using a 25 button (5x5) button matrix, but can be
 
 ## Button Matrix Information
 
-I printed [this enclosure](https://www.thingiverse.com/thing:5239739) by _m40 and wired it together with 1N4148 diodes on the rows.
+I printed [this enclosure](https://www.thingiverse.com/thing:5239739) by _m40 and wired it together with [1N4148 diodes](https://www.amazon.com/dp/B07Q4F3Y5W) on the rows.
 
 I've included a diagram of my wiring in this repository, which can be found [here](https://github.com/zsd7200/plza-shiny-tool/blob/master/media/matrix.png).
 
