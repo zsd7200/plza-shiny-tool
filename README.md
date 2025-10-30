@@ -22,12 +22,10 @@ You can use different pins or a different board, but you will have to adjust the
 1. Download the [Arduino IDE](https://www.arduino.cc/en/software/) (tested on 1.8.19 and 2.3.6)
 2. Download [Arduino LUFA](https://github.com/Palatis/Arduino-Lufa) and follow the instructions on its repository to set it up.
 3. Open `plza-shiny-tool.ino` in the Arduino IDE, select your board type and serial port.
-4. If using a Switch 2, set `switchTwo` to `true`. This will adjust loading times to accommodate for faster load speeds on Switch 2.
-    - If using device on a mix of Switch 1 and Switch 2 systems, keep `switchTwo` set to `false`.
-    - **If using a button matrix, skip to step 7. Otherwise, continue.**
-5. Set `buttonMatrix` to `false`.
-6. Set `zoneId` equal to the desired Wild Zone's number, or other ID from [this table](https://github.com/zsd7200/plza-shiny-tool/blob/master/ZONE_ID.md) (coming soon).
-7. Upload code to board. You may need to press the reset button/bridge reset pins during upload.
+    - **If using a button matrix, skip to step 6. Otherwise, continue.**
+4. Set `buttonMatrix` to `false`.
+5. Set `zoneId` equal to the desired Wild Zone's number, or other ID from [this table](https://github.com/zsd7200/plza-shiny-tool/blob/master/ZONE_ID.md) (coming soon).
+6. Upload code to board. You may need to press the reset button/bridge reset pins during upload.
 
 ## In-Game Setup Instructions
 

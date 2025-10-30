@@ -12,9 +12,6 @@ WildZone wildZone;
 WildZoneRefresh wildZoneRefresh;
 MapLocations mapLocations;
 
-// set to true if using a switch 2
-bool switchTwo = false;
-
 // set to false if not using a physical button matrix
 bool usingMatrix = true;
 
@@ -38,6 +35,9 @@ unsigned long lastChangeTime[ROWS][COLS];
 // determines whether or not the map should be zeroed before refreshing
 bool hasTraveled;
 
+// after some testing, this might not be necessary
+bool switchTwo;
+
 // For writing simple scripts, use this function and call to it in the main.
 void simpleScript() {
   simple.Left(1000);
@@ -47,6 +47,7 @@ void setup() {
   SetupHardware(); // Needed for LUFA
   GlobalInterruptEnable(); // Needed for LUFA
   hasTraveled = false;
+  switchTwo = true;
 
   // init button matrix
   for (int i = 0; i < COLS; i++) {
