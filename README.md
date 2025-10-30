@@ -3,7 +3,7 @@
 A fork of [ironandstee1's swemu-plus-plus](https://github.com/ironandstee1/swemu-plus-plus) to shiny hunt using the fast-travel
 method in Pokémon Legends: Z-A.
 
-This is only compatible with ATMega32U4 based boards (Arduino Leonardo, Arduino Pro Micro) and compatibility is not planned.
+This is only compatible with ATMega32U4 based boards (Arduino Leonardo, Arduino Pro Micro) and compatibility for other boards is not planned.
 
 Designed to be interfaced with using a 25 button (5x5) button matrix, but can be used without. Will just need to reflash when starting a new hunt.
 
@@ -80,5 +80,6 @@ Special thanks to shinyquagsire's and progmem's reverseengineering work for the 
 Dean Camera for the LUFA Library
 
 zlittell, msf-xinput was very helpful for starting.
+
 
 
