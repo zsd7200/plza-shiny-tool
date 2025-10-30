@@ -27,6 +27,11 @@ void MapLocations::Refresh(boolean switchTwo = true) {
 };
 
 void MapLocations::Bench(boolean switchTwo = true) {
+  B(50); // clear out map if open
+  B(50);
+  B(50);
+  B(50);
+  Down(50);
   Down(50);
   A(100);
   Nothing(TEXT_WAIT);
