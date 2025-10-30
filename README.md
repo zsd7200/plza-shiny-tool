@@ -17,11 +17,7 @@ For the board, I used [one of these](https://www.amazon.com/dp/B0B6HYLC44) clone
 
 You can use different pins or a different board, but you will have to adjust the code accordingly. Just change the `rowPins[ROWS]` and `colPins[COLS]` variables to match your row/column pins in order.
 
-## Flashing Instructions
-
-Precompiled code coming soon. It will only be available for those using a button matrix as described above.
-
-## Building / Usage Instructions
+## Building / Flashing / Usage Instructions
 
 1. Download the [Arduino IDE](https://www.arduino.cc/en/software/) (tested on 1.8.19 and 2.3.6)
 2. Download [Arduino LUFA](https://github.com/Palatis/Arduino-Lufa) and follow the instructions on its repository to set it up.
@@ -31,6 +27,16 @@ Precompiled code coming soon. It will only be available for those using a button
 5. Set `buttonMatrix` to `false`.
 6. Set `zoneId` equal to the desired Wild Zone's number, or other ID from [this table](https://github.com/zsd7200/plza-shiny-tool/blob/master/ZONE_ID.md) (coming soon).
 7. Upload code to board. You may need to press the reset button/bridge reset pins during upload.
+
+## In-Game Setup Instructions
+
+### Wild Zone x
+1. Ensure that the game is not about to enter a new day/night cycle.
+1. Unplug/disconnect all other controllers/attach Joy-Cons to console.
+2. Plug in Arduino.
+3. If using button matrix, push desired button.
+
+**Note: You may need to unplug/replug the Arduino in to select a new area.**
 
 ## Scripting Instructions
 
@@ -56,16 +62,6 @@ simple.Nothing(1000);
 to execute it! This example is aleady provided in the source code. 
 
 If you would like to see the available functions or configure the wait time after every function, check out the SimpleScripting.h header. You can also create classes and functions as I did if that's your preference. 
-
-## In-Game Setup Instructions
-
-### Wild Zone x
-1. Ensure that the game is not about to enter a new day/night cycle.
-1. Unplug/disconnect all other controllers/attach Joy-Cons to console.
-2. Plug in Arduino.
-3. If using button matrix, push desired button.
-
-**Note: You may need to unplug/replug the Arduino in to select a new area.**
 
 ## Todo
 
