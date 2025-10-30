@@ -12,16 +12,18 @@ WildZone wildZone;
 WildZoneRefresh wildZoneRefresh;
 MapLocations mapLocations;
 
-// set desired wild zone number / area ID here
-// or set to 999 for simpleScript
-int zoneId = 0;
-
 // set to false if using a switch 1
 bool switchTwo = true;
 
 // set to false if not using a physical button matrix
-bool usingMatrix = false;
+bool usingMatrix = true;
 
+// set desired wild zone number / area ID here
+// or set to 999 for simpleScript
+// if using button matrix, can leave this set to 0
+int zoneId = 0;
+
+// button matrix vars
 const int ROWS = 5;
 const int COLS = 5;
 const int DEBOUNCE_MS = 5;
@@ -33,7 +35,7 @@ bool keyState[ROWS][COLS];
 bool lastKeyState[ROWS][COLS];
 unsigned long lastChangeTime[ROWS][COLS];
 
-
+// determines whether or not the map should be zeroed before refreshing
 bool hasTraveled;
 
 // For writing simple scripts, use this function and call to it in the main.
@@ -46,6 +48,7 @@ void setup() {
   GlobalInterruptEnable(); // Needed for LUFA
   hasTraveled = false;
 
+  // init button matrix
   for (int i = 0; i < COLS; i++) {
     pinMode(colPins[i], INPUT_PULLUP);
   }
@@ -65,10 +68,6 @@ void setup() {
 void loop() {
   if (!hasTraveled && zoneId > 0) {
     return travelTo(zoneId);
-  }
-
-  if (usingMatrix) {
-    scanMatrix();
   }
 
   switch (zoneId) {
@@ -140,6 +139,10 @@ void loop() {
       break;
     default:
       break;
+  }
+
+  if (usingMatrix) {
+    scanMatrix();
   }
 }
 
@@ -213,6 +216,7 @@ void travelTo(int zone) {
   }
 }
 
+// read button input
 void scanMatrix() {
   for (int i = 0; i < ROWS; i++) {
     pinMode(rowPins[i], OUTPUT);
@@ -240,6 +244,7 @@ void scanMatrix() {
   }
 }
 
+// set zoneId based on button pressed
 void handleButton(int row, int col) {
   hasTraveled = false;
 
