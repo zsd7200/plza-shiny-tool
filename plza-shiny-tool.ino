@@ -70,75 +70,77 @@ void loop() {
     return travelTo(zoneId);
   }
 
-  switch (zoneId) {
-    case 1:
-      wildZoneRefresh.One(switchTwo);
-      break;
-    case 2:
-      wildZoneRefresh.Two(switchTwo);
-      break;
-    case 3:
-      wildZoneRefresh.Three(switchTwo);
-      break;
-    case 4:
-      wildZoneRefresh.Four(switchTwo);
-      break;
-    case 5:
-      wildZoneRefresh.Five(switchTwo);
-      break;
-    case 6:
-      wildZoneRefresh.Six(switchTwo);
-      break;
-    case 7:
-      wildZoneRefresh.Seven(switchTwo);
-      break;
-    case 8:
-      wildZoneRefresh.Eight(switchTwo);
-      break;
-    case 9:
-      wildZoneRefresh.Nine(switchTwo);
-      break;
-    case 10:
-      wildZoneRefresh.Ten(switchTwo);
-      break;
-    case 11:
-      wildZoneRefresh.Eleven(switchTwo);
-      break;
-    case 12:
-      wildZoneRefresh.Twelve(switchTwo);
-      break;
-    case 13:
-      wildZoneRefresh.Thirteen(switchTwo);
-      break;
-    case 14:
-      wildZoneRefresh.Fourteen(switchTwo);
-      break;
-    case 15:
-      wildZoneRefresh.Fifteen(switchTwo);
-      break;
-    case 16:
-      wildZoneRefresh.Sixteen(switchTwo);
-      break;
-    case 17:
-      wildZoneRefresh.Seventeen(switchTwo);
-      break;
-    case 18:
-      wildZoneRefresh.Eighteen(switchTwo);
-      break;
-    case 19:
-      wildZoneRefresh.Nineteen(switchTwo);
-      break;
-    case 20:
-      wildZoneRefresh.Twenty(switchTwo);
-      break;
-    case 50:
-      mapLocations.Refresh(switchTwo);
-      break;
-    case 999:
-      simpleScript();
-      break;
-    default:
-      break;
+  if (hasTraveled && zoneId > 0) {
+    switch (zoneId) {
+      case 1:
+        wildZoneRefresh.One(switchTwo);
+        break;
+      case 2:
+        wildZoneRefresh.Two(switchTwo);
+        break;
+      case 3:
+        wildZoneRefresh.Three(switchTwo);
+        break;
+      case 4:
+        wildZoneRefresh.Four(switchTwo);
+        break;
+      case 5:
+        wildZoneRefresh.Five(switchTwo);
+        break;
+      case 6:
+        wildZoneRefresh.Six(switchTwo);
+        break;
+      case 7:
+        wildZoneRefresh.Seven(switchTwo);
+        break;
+      case 8:
+        wildZoneRefresh.Eight(switchTwo);
+        break;
+      case 9:
+        wildZoneRefresh.Nine(switchTwo);
+        break;
+      case 10:
+        wildZoneRefresh.Ten(switchTwo);
+        break;
+      case 11:
+        wildZoneRefresh.Eleven(switchTwo);
+        break;
+      case 12:
+        wildZoneRefresh.Twelve(switchTwo);
+        break;
+      case 13:
+        wildZoneRefresh.Thirteen(switchTwo);
+        break;
+      case 14:
+        wildZoneRefresh.Fourteen(switchTwo);
+        break;
+      case 15:
+        wildZoneRefresh.Fifteen(switchTwo);
+        break;
+      case 16:
+        wildZoneRefresh.Sixteen(switchTwo);
+        break;
+      case 17:
+        wildZoneRefresh.Seventeen(switchTwo);
+        break;
+      case 18:
+        wildZoneRefresh.Eighteen(switchTwo);
+        break;
+      case 19:
+        wildZoneRefresh.Nineteen(switchTwo);
+        break;
+      case 20:
+        wildZoneRefresh.Twenty(switchTwo);
+        break;
+      case 50:
+        mapLocations.Refresh(switchTwo);
+        break;
+      case 999:
+        simpleScript();
+        break;
+      default:
+        break;
+    }
   }
 
   if (usingMatrix) {

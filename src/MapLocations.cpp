@@ -2,7 +2,11 @@
 
 void MapLocations::TopLeft() {
   Nothing(2000); // little delay from it being plugged in so the console can recognize the controller
-  //Plus(100); // for some reason this needs to be pressed twice here
+  B(100);
+  B(100);
+  B(100);
+  B(100);
+  B(100); // back out of anything currently happening on screen
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   RStickDown(50);

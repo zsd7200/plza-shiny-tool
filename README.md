@@ -60,7 +60,7 @@ If you would like to see the available functions or configure the wait time afte
 ## In-Game Setup Instructions
 
 ### Wild Zone x
-1. Ensure that the player is not already on the map screen and that the game is not about to enter a new day/night cycle.
+1. Ensure that the game is not about to enter a new day/night cycle.
 1. Unplug/disconnect all other controllers/attach Joy-Cons to console.
 2. Plug in Arduino.
 3. If using button matrix, push desired button.
