@@ -35,10 +35,36 @@ You can use different pins or a different board, but you will have to adjust the
 3. Plug in Arduino.
 4. If using button matrix, push desired button.
 
-**Note: You may need to unplug/replug the Arduino in to select a new area.**
+**Note:** You may need to unplug/replug the Arduino in to select a new area.
+
+### Refresh Area
+1. Fly to any Fly Zone.
+2. Unplug/disconnect all other controllers/attach Joy-Cons to console.
+3. Plug in Arduino.
+4. If using button matrix, push appropriate button (4,0).
 
 ### Bench
-The best way to refresh a bench is to use it once before plugging in the Arduino/pressing the Refresh Bench button. This will position you perfectly for the bench refresh script.
+1. Go to any bench.
+2. Unplug/disconnect all other controllers/attach Joy-Cons to console.
+3. Plug in Arduino.
+4. If using button matrix, push appropriate button (4,1).
+
+### Wild Zone 20 Alpha Macro
+1. Ensure that the game is not about to enter a new day/night cycle.
+2. Unplug/disconnect all other controllers/attach Joy-Cons to console.
+3. Plug in Arduino.
+4. If using button matrix, push appropriate button (4,3).
+
+**Note:** This macro will:
+1. Fly to Centrico Pokémon Center.
+2. Go to a bench to reset day/night cycle.
+3. Fly to Zone 20.
+4. Go into Zone 20, far enough to spawn the Alphas in the center.
+5. Leave Zone 20.
+6. Repeat Steps 3-5 30 times.
+7. Fly back to Centrico.
+8. Reset day/night cycle.
+9. Repeat steps 3-5 30 times again.
 
 ## Scripting Instructions
 
