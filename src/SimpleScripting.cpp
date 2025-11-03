@@ -84,6 +84,13 @@ void Simple::Nothing(unsigned long timeHeld, unsigned long afterDelay = 200) {
   while (general.Nothing(timeHeld));
 }
 
+void Simple::BWait(unsigned long timeHeld, unsigned long afterDelay = 200) {
+  const int bPresses = timeHeld / 50;
+  for (int i = 0; i < bPresses; i++) {
+    B(50, afterDelay);
+  }
+}
+
 void Simple::MapTravel(boolean switchTwo = true) {
   A(100);
   Nothing(TEXT_WAIT);

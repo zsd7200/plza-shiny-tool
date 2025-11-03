@@ -1,7 +1,5 @@
 #include "WildZone.h"
 
-unsigned long TOP_LEFT_DELAY = 50;
-
 void WildZone::One(boolean switchTwo = true) {
   Nothing(TOP_LEFT_DELAY);
   Right(1100);

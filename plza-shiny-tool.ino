@@ -4,12 +4,14 @@
 #include "src/General.h"
 #include "src/WildZone.h"
 #include "src/WildZoneRefresh.h"
+#include "src/WildZoneSpecial.h"
 #include "src/MapLocations.h"
 #include "src/SimpleScripting.h"
 
 Simple simple;
 WildZone wildZone;
 WildZoneRefresh wildZoneRefresh;
+WildZoneSpecial wildZoneSpecial;
 MapLocations mapLocations;
 
 // set to false if not using a physical button matrix
@@ -32,17 +34,25 @@ bool keyState[ROWS][COLS];
 bool lastKeyState[ROWS][COLS];
 unsigned long lastChangeTime[ROWS][COLS];
 
+const int zoneIdButtonMap[ROWS][COLS] = {
+  { 1,  2,  3,  4,  5 },
+  { 6,  7,  8,  9,  10 },
+  { 11, 12, 13, 14, 15 },
+  { 16, 17, 18, 19, 20 },
+  { 50, 60, 70,  0,  999 },
+};
+
 // determines whether or not the map should be zeroed before refreshing
 bool hasTraveled;
-const int BENCH_ZONE = 60;
-const int SCRIPT_ZONE = 999;
+const int skipHasTraveled[] = { 60, 70, 999 };
 
 // after some testing, this might not be necessary
 bool switchTwo;
 
 // For writing simple scripts, use this function and call to it in the main.
 void simpleScript() {
-  simple.Left(1000);
+  simple.A(50);
+  simple.Nothing(50);
 }
 
 void setup() {
@@ -69,7 +79,7 @@ void setup() {
 }
 
 void loop() {
-  if (!hasTraveled && (zoneId == BENCH_ZONE || zoneId == SCRIPT_ZONE)) {
+  if (!hasTraveled && shouldSkipHasTraveled(zoneId)) {
     hasTraveled = true;
   }
 
@@ -144,6 +154,9 @@ void loop() {
         break;
       case 60:
         mapLocations.Bench(switchTwo);
+        break;
+      case 70:
+        wildZoneSpecial.TwentyAlpha(switchTwo);
         break;
       case 999:
         simpleScript();
@@ -258,117 +271,25 @@ void scanMatrix() {
 
 // set zoneId based on button pressed
 void handleButton(int row, int col) {
-  hasTraveled = false;
-
-  switch (row) {
-    case 0:
-      switch (col) {
-        case 0:
-          zoneId = 1;
-          break;
-        case 1:
-          zoneId = 2;
-          break;
-        case 2:
-          zoneId = 3;
-          break;
-        case 3:
-          zoneId = 4;
-          break;
-        case 4:
-          zoneId = 5;
-          break;
-        default:
-          break;
-      }
-      break;
-    case 1:
-      switch (col) {
-        case 0:
-          zoneId = 6;
-          break;
-        case 1:
-          zoneId = 7;
-          break;
-        case 2:
-          zoneId = 8;
-          break;
-        case 3:
-          zoneId = 9;
-          break;
-        case 4:
-          zoneId = 10;
-          break;
-        default:
-          break;
-      }
-      break;
-    case 2:
-      switch (col) {
-        case 0:
-          zoneId = 11;
-          break;
-        case 1:
-          zoneId = 12;
-          break;
-        case 2:
-          zoneId = 13;
-          break;
-        case 3:
-          zoneId = 14;
-          break;
-        case 4:
-          zoneId = 15;
-          break;
-        default:
-          break;
-      }
-      break;
-    case 3:
-      switch (col) {
-        case 0:
-          zoneId = 16;
-          break;
-        case 1:
-          zoneId = 17;
-          break;
-        case 2:
-          zoneId = 18;
-          break;
-        case 3:
-          zoneId = 19;
-          break;
-        case 4:
-          zoneId = 20;
-          break;
-        default:
-          break;
-      }
-      break;
-    case 4:
-      switch (col) {
-        case 0:
-          zoneId = 50;
-          break;
-        case 1:
-          zoneId = 60;
-          hasTraveled = true;
-          break;
-        case 2:
-          zoneId = 0;
-          break;
-        case 3:
-          zoneId = 0;
-          break;
-        case 4:
-          zoneId = 999;
-          hasTraveled = true;
-          break;
-        default:
-          break;
-      }
-      break;
-    default:
-      break;
+  if (row >= ROWS || col >= COLS) {
+    zoneId = 0;
+    return;
   }
+
+  hasTraveled = false;
+  zoneId = zoneIdButtonMap[row][col];
+
+  if (shouldSkipHasTraveled(zoneId)) {
+    hasTraveled = true;
+  }
+}
+
+bool shouldSkipHasTraveled(int zone) {
+  for (int i = 0; i < sizeof(skipHasTraveled); i++) {
+    if (zone == skipHasTraveled[i]) {
+      return true;
+    }
+  }
+
+  return false;
 }

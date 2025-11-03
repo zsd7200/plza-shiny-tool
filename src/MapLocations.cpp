@@ -26,13 +26,15 @@ void MapLocations::Refresh(boolean switchTwo = true) {
   Nothing(switchTwo ? SWITCH_TWO_WAIT : SWITCH_ONE_WAIT);
 };
 
-void MapLocations::Bench(boolean switchTwo = true) {
+void MapLocations::Bench(boolean switchTwo = true, boolean goDown = true) {
   B(50); // clear out map if open
   B(50);
   B(50);
   B(50);
-  Down(50);
-  Down(50);
+  if (goDown) {
+    Down(50);
+    Down(50);
+  }
   A(100); // too many A button pushes but this ensures that we're pressing all the dialog options on either system
   Nothing(TEXT_WAIT);
   A(100);

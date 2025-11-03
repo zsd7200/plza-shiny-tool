@@ -35,6 +35,7 @@ class Simple {
     void Plus(unsigned long timeHeld, unsigned long afterDelay = 200);
     void Minus(unsigned long timeHeld, unsigned long afterDelay = 200);
     void Nothing(unsigned long timeHeld, unsigned long afterDelay = 200);
+    void BWait(unsigned long timeHeld, unsigned long afterDelay = 200);
     void MapTravel(boolean switchTwo = true);
 
   private:
