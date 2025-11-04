@@ -25,6 +25,7 @@ int zoneId = 0;
 // button matrix vars
 const int ROWS = 5;
 const int COLS = 5;
+const int LEDS = 4;
 const int DEBOUNCE_MS = 5;
 
 const int rowPins[ROWS] = { 5, 6, 7, 8, 9 };
@@ -34,17 +35,16 @@ bool keyState[ROWS][COLS];
 bool lastKeyState[ROWS][COLS];
 unsigned long lastChangeTime[ROWS][COLS];
 
-const int zoneIdButtonMap[ROWS][COLS] = {
-  { 1,  2,  3,  4,  5 },
-  { 6,  7,  8,  9,  10 },
-  { 11, 12, 13, 14, 15 },
-  { 16, 17, 18, 19, 20 },
-  { 50, 60, 70,  0,  999 },
-};
+int zoneIdButtonMap[ROWS][COLS];
+
+const int ledPins[LEDS] = { A3, 4, 3, 2 };
+int currPage = 0;
+const int MAX_PAGES = 4;
+const int PREV_PAGE = 997;
+const int NEXT_PAGE = 998;
 
 // determines whether or not the map should be zeroed before refreshing
 bool hasTraveled;
-const int skipHasTraveled[] = { 60, 70, 999 };
 
 // after some testing, this might not be necessary
 bool switchTwo;
@@ -70,6 +70,12 @@ void setup() {
     pinMode(rowPins[i], INPUT);
   }
 
+  for (int i = 0; i < LEDS; i++) {
+    pinMode(ledPins[i], OUTPUT);
+  }
+
+  handlePage(0);
+
   for (int i = 0; i < ROWS; i++) {
     for (int j = 0; j < COLS; j++) {
       keyState[i][j] = lastKeyState[i][j] = false;
@@ -79,6 +85,20 @@ void setup() {
 }
 
 void loop() {
+  if (usingMatrix) {
+    scanMatrix();
+  }
+
+  if (zoneId == PREV_PAGE) {
+    zoneId = 0;
+    return handlePage(-1);
+  }
+
+  if (zoneId == NEXT_PAGE) {
+    zoneId = 0;
+    return handlePage(1);
+  }
+
   if (!hasTraveled && shouldSkipHasTraveled(zoneId)) {
     hasTraveled = true;
   }
@@ -155,7 +175,7 @@ void loop() {
       case 60:
         mapLocations.Bench(switchTwo);
         break;
-      case 70:
+      case 100:
         wildZoneSpecial.TwentyAlpha(switchTwo);
         break;
       case 999:
@@ -164,10 +184,6 @@ void loop() {
       default:
         break;
     }
-  }
-
-  if (usingMatrix) {
-    scanMatrix();
   }
 }
 
@@ -278,18 +294,198 @@ void handleButton(int row, int col) {
 
   hasTraveled = false;
   zoneId = zoneIdButtonMap[row][col];
-
-  if (shouldSkipHasTraveled(zoneId)) {
-    hasTraveled = true;
-  }
 }
 
 bool shouldSkipHasTraveled(int zone) {
-  for (int i = 0; i < sizeof(skipHasTraveled); i++) {
-    if (zone == skipHasTraveled[i]) {
-      return true;
+  if (zone == 60) return true;
+  if (zone == 70) return true;
+  if (zone == 999) return true;
+  return false;
+}
+
+const int ZONE_MAP_PAGES[15][5][5] = {
+    {
+      { 1,  2,  3,  4,  5 },
+      { 6,  7,  8,  9,  10 },
+      { 11, 12, 13, 14, 15 },
+      { 16, 17, 18, 19, 20 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 100, 100, 100, 100, 100 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
+    },
+    {
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 0, 0, 0, 0, 0 },
+      { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
     }
+};
+
+void handlePage(int adjust) {
+  currPage += adjust;
+  if (currPage == MAX_PAGES) {
+    currPage = 0;
   }
 
-  return false;
+  for (int i = 0; i < LEDS; i++) {
+    digitalWrite(ledPins[i], LOW);
+  }
+
+  switch (currPage) {
+    case 0:
+    default:
+      digitalWrite(ledPins[0], HIGH);
+      break;
+    case 1:
+      digitalWrite(ledPins[1], HIGH);
+      break;
+    case 2:
+      digitalWrite(ledPins[2], HIGH);
+      break;
+    case 3:
+      digitalWrite(ledPins[3], HIGH);
+      break;
+    case 4:
+      digitalWrite(ledPins[0], HIGH);
+      digitalWrite(ledPins[1], HIGH);
+      break;
+    case 5:
+      digitalWrite(ledPins[0], HIGH);
+      digitalWrite(ledPins[2], HIGH);
+      break;
+    case 6:
+      digitalWrite(ledPins[0], HIGH);
+      digitalWrite(ledPins[3], HIGH);
+      break;
+    case 7:
+      digitalWrite(ledPins[1], HIGH);
+      digitalWrite(ledPins[2], HIGH);
+      break;
+    case 8:
+      digitalWrite(ledPins[1], HIGH);
+      digitalWrite(ledPins[3], HIGH);
+      break;
+    case 9:
+      digitalWrite(ledPins[2], HIGH);
+      digitalWrite(ledPins[3], HIGH);
+      break;
+    case 10:
+      digitalWrite(ledPins[0], HIGH);
+      digitalWrite(ledPins[1], HIGH);
+      digitalWrite(ledPins[2], HIGH);
+      break;
+    case 11:
+      digitalWrite(ledPins[0], HIGH);
+      digitalWrite(ledPins[1], HIGH);
+      digitalWrite(ledPins[3], HIGH);
+      break;
+    case 12:
+      digitalWrite(ledPins[0], HIGH);
+      digitalWrite(ledPins[2], HIGH);
+      digitalWrite(ledPins[3], HIGH);
+      break;
+    case 13:
+      digitalWrite(ledPins[1], HIGH);
+      digitalWrite(ledPins[2], HIGH);
+      digitalWrite(ledPins[3], HIGH);
+      break;
+    case 14:
+      digitalWrite(ledPins[0], HIGH);
+      digitalWrite(ledPins[1], HIGH);
+      digitalWrite(ledPins[2], HIGH);
+      digitalWrite(ledPins[3], HIGH);
+      break;
+  }
+
+  memcpy(zoneIdButtonMap, ZONE_MAP_PAGES[currPage], sizeof(zoneIdButtonMap));
 }
