@@ -24,5 +24,5 @@
 | 20            | 3,4               | Wild Zone 20 |
 | 50            | 4,0               | Refresh Map Location (Pokémon Center, Building, Cafe) |
 | 60            | 4,1               | Refresh Bench |
-| 70            | 4,2               | Wild Zone 20 Alpha Macro |
+| 100           | 4,2               | Wild Zone 20 Alpha Macro |
 | 999           | 4,4               | `simpleScript()` |
