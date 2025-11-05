@@ -85,6 +85,15 @@ The top 4 rows will change depending on what page you're on. You can consult the
 8. Reset day/night cycle.
 9. Repeat steps 3-5 30 times again.
 
+### Trade Macro
+1. Open up a local or online trade with another console actively using the macro.
+   - You will need to be on the Pokémon select screen.
+2. Unplug/disconnect all other controllers/attach Joy-Cons to console.
+3. Plug in Arduino or push appropriate button on button matrix at the same time on both consoles.
+4. If done correctly, trades should begin and the macro should disconnect the trade session upon completion.
+
+**Note**: Any trade macro above the "Trade 1 Pokémon" macro assumes you are at the top-left (or at least the leftmost) space in any given box (not counting party Pokémon).
+
 ## Scripting Instructions
 
 If you want to create your own scripts, there is an included function called ```simpleScript``` in the main.ino file. Simply make the ```simpleScript();``` the only function call in main and write a script such as
@@ -127,6 +136,7 @@ Special thanks to shinyquagsire's and progmem's reverseengineering work for the 
 Dean Camera for the LUFA Library
 
 zlittell, msf-xinput was very helpful for starting.
+
 
 
 
