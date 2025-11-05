@@ -23,6 +23,11 @@ Page | x,y  | Location/Function |
 1    | 3,3  | Wild Zone 19 |
 1    | 3,4  | Wild Zone 20 |
 2    | 0,0  | Wild Zone 20 Alpha Macro |
+2    | 1,0  | Trade 1 Pokémon |
+2    | 1,1  | Trade 6 Pokémon |
+2    | 1,2  | Trade 12 Pokémon |
+2    | 1,3  | Trade 30 Pokémon |
+2    | 1,4  | Trade 60 Pokémon |
 ALL  | 4,0  | Refresh Map Location (Pokémon CePagenter, Building, Cafe) |
 ALL  | 4,1  | Refresh Bench |
 ALL  | 4,2  | `simpleScript()` |

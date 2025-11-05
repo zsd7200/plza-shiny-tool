@@ -1,5 +1,5 @@
-#ifndef _WildZoneMacro_H_
-#define _WildZoneMacro_H_
+#ifndef _SpecialMacro_H_
+#define _SpecialMacro_H_
 
 #include <LUFA.h>
 #include "../LUFAConfig.h"
@@ -14,18 +14,12 @@
 
 using namespace std;
 
-class WildZoneMacro : private Simple {
+class SpecialMacro : private Simple {
   public:
-    void TwentyAlpha(boolean switchTwo = true);
+    void Trade(int numberToTrade = 1);
 
   private:
-    MapLocations mapLocations;
-    PokemonCenter pokemonCenter;
-    WildZone wildZone;
-    WildZoneRefresh wildZoneRefresh;
-
-    int twentyAlphaCount = 0;
-    const int MAX_TWENTY_ALPHA_COUNT = 30;
+    int currTradeCount = 0;
 };
 
 #endif

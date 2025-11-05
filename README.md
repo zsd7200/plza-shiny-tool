@@ -113,8 +113,8 @@ If you would like to see the available functions or configure the wait time afte
 ## Todo
 
 - Add coords for non-wild area fly locations
-- Fix timing on first fly in
 - Fix not being able to press a new button after the old one is running
+- .ino file cleanup
 
 ## Credits
 

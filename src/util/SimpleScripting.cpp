@@ -91,6 +91,13 @@ void Simple::BWait(unsigned long timeHeld, unsigned long afterDelay = 200) {
   }
 }
 
+void Simple::Roll(int times = 1) {
+    for (int i = 0; i < times; i++) {
+        Y(50);
+        Nothing(ROLL_WAIT);
+    }
+}
+
 void Simple::MapTravel(boolean switchTwo = true) {
   A(100);
   Nothing(TEXT_WAIT);

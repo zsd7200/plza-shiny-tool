@@ -22,7 +22,12 @@
 | 18            | Page 1             | 3,2               | Wild Zone 18 |
 | 19            | Page 1             | 3,3               | Wild Zone 19 |
 | 20            | Page 1             | 3,4               | Wild Zone 20 |
-| 50            | Page ALL           | 4,0               | Refresh Map Location (Pokémon CePagenter, Building, Cafe) |
+| 50            | Page ALL           | 4,0               | Refresh Map Location (Pokémon Center, Building, Cafe) |
 | 60            | Page ALL           | 4,1               | Refresh Bench |
 | 100           | Page 2             | 0,0               | Wild Zone 20 Alpha Macro |
+| 110           | Page 2             | 1,0               | Trade 1 Pokémon |
+| 111           | Page 2             | 1,1               | Trade 6 Pokémon |
+| 112           | Page 2             | 1,2               | Trade 12 Pokémon |
+| 113           | Page 2             | 1,3               | Trade 30 Pokémon |
+| 114           | Page 2             | 1,4               | Trade 60 Pokémon |
 | 999           | Page ALL           | 4,2               | `simpleScript()` |

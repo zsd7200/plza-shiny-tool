@@ -6,13 +6,15 @@
 #include "src/locations/WildZone.h"
 #include "src/util/SimpleScripting.h"
 #include "src/util/WildZoneRefresh.h"
+#include "src/macro/SpecialMacro.h"
 #include "src/macro/WildZoneMacro.h"
 
 MapLocations mapLocations;
 WildZone wildZone;
 Simple simple;
 WildZoneRefresh wildZoneRefresh;
-WildZoneMacro WildZoneMacro;
+SpecialMacro specialMacro;
+WildZoneMacro wildZoneMacro;
 
 // set to false if not using a physical button matrix
 bool usingMatrix = true;
@@ -176,7 +178,22 @@ void loop() {
         mapLocations.Bench(switchTwo);
         break;
       case 100:
-        WildZoneMacro.TwentyAlpha(switchTwo);
+        wildZoneMacro.TwentyAlpha(switchTwo);
+        break;
+      case 110:
+        specialMacro.Trade(1);
+        break;
+      case 111:
+        specialMacro.Trade(6);
+        break;
+      case 112:
+        specialMacro.Trade(12);
+        break;
+      case 113:
+        specialMacro.Trade(30);
+        break;
+      case 114:
+        specialMacro.Trade(60);
         break;
       case 999:
         simpleScript();
@@ -297,9 +314,14 @@ void handleButton(int row, int col) {
 }
 
 bool shouldSkipHasTraveled(int zone) {
-  if (zone == 60) return true;
-  if (zone == 70) return true;
-  if (zone == 999) return true;
+  int skipZones[] = {60, 70, 110, 111, 112, 113, 114, 999};
+  int numZones = sizeof(skipZones) / sizeof(skipZones[0]);
+
+  for (int i = 0; i < numZones; i++) {
+    if (zone == skipZones[i]) {
+      return true;
+    }
+  }
   return false;
 }
 
@@ -313,7 +335,7 @@ const int ZONE_MAP_PAGES[15][5][5] = {
     },
     {
       { 100, 100, 100, 100, 100 },
-      { 0, 0, 0, 0, 0 },
+      { 110, 111, 112, 113, 114 },
       { 0, 0, 0, 0, 0 },
       { 0, 0, 0, 0, 0 },
       { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
@@ -413,7 +435,7 @@ const int ZONE_MAP_PAGES[15][5][5] = {
 
 void handlePage(int adjust) {
   currPage += adjust;
-  if (currPage == MAX_PAGES) {
+  if (currPage == MAX_PAGES || currPage < 0) {
     currPage = 0;
   }
 

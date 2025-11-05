@@ -27,7 +27,7 @@ void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
     // roll to gate
     Roll();
     A(50);
-    Nothing(GATE_WAIT_MS);
+    Nothing(GATE_WAIT);
 
     // roll in
     Roll(5);
@@ -41,7 +41,7 @@ void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
 
     // leave
     A(50);
-    Nothing(GATE_WAIT_MS);
+    Nothing(GATE_WAIT);
 
     // increment twentyAlphaCount or reset to fix weird day/night cycle issues
     twentyAlphaCount++;
@@ -58,11 +58,4 @@ void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
     Left(100);
     Nothing(50);
     MapTravel(switchTwo);
-}
-
-void WildZoneMacro::Roll(int times = 1) {
-    for (int i = 0; i < times; i++) {
-        Y(50);
-        Nothing(ROLL_WAIT_MS);
-    }
 }
