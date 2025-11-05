@@ -1,12 +1,12 @@
 #ifndef _PokemonCenter_H_
 #define _PokemonCenter_H_
 
-#include "LUFAConfig.h"
 #include <LUFA.h>
-#include "Joystick.h"
-#include "Descriptors.h"
-#include "WaitTimes.h"
-#include "SimpleScripting.h"
+#include "../LUFAConfig.h"
+#include "../Joystick.h"
+#include "../Descriptors.h"
+#include "../util/WaitTimes.h"
+#include "../util/SimpleScripting.h"
 
 using namespace std;
 

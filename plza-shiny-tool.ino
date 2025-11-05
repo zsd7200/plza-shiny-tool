@@ -2,17 +2,17 @@
 #include "src/LUFAConfig.h"
 #include "src/Joystick.h"
 #include "src/General.h"
-#include "src/WildZone.h"
-#include "src/WildZoneRefresh.h"
-#include "src/WildZoneSpecial.h"
-#include "src/MapLocations.h"
-#include "src/SimpleScripting.h"
+#include "src/locations/MapLocations.h"
+#include "src/locations/WildZone.h"
+#include "src/util/SimpleScripting.h"
+#include "src/util/WildZoneRefresh.h"
+#include "src/macro/WildZoneMacro.h"
 
-Simple simple;
-WildZone wildZone;
-WildZoneRefresh wildZoneRefresh;
-WildZoneSpecial wildZoneSpecial;
 MapLocations mapLocations;
+WildZone wildZone;
+Simple simple;
+WildZoneRefresh wildZoneRefresh;
+WildZoneMacro WildZoneMacro;
 
 // set to false if not using a physical button matrix
 bool usingMatrix = true;
@@ -176,7 +176,7 @@ void loop() {
         mapLocations.Bench(switchTwo);
         break;
       case 100:
-        wildZoneSpecial.TwentyAlpha(switchTwo);
+        WildZoneMacro.TwentyAlpha(switchTwo);
         break;
       case 999:
         simpleScript();

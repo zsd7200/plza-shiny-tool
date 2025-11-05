@@ -1,6 +1,6 @@
-#include "WildZoneSpecial.h"
+#include "WildZoneMacro.h"
 
-void WildZoneSpecial::TwentyAlpha(boolean switchTwo = true) {
+void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
     // check if fresh cycle
     if (twentyAlphaCount == 0) {
         // center, then travel to centrico center
@@ -60,7 +60,7 @@ void WildZoneSpecial::TwentyAlpha(boolean switchTwo = true) {
     MapTravel(switchTwo);
 }
 
-void WildZoneSpecial::Roll(int times = 1) {
+void WildZoneMacro::Roll(int times = 1) {
     for (int i = 0; i < times; i++) {
         Y(50);
         Nothing(ROLL_WAIT_MS);

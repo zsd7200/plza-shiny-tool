@@ -1,10 +1,10 @@
 #ifndef _WildZoneRefresh_H_
 #define _WildZoneRefresh_H_
 
-#include "LUFAConfig.h"
 #include <LUFA.h>
-#include "Joystick.h"
-#include "Descriptors.h"
+#include "../LUFAConfig.h"
+#include "../Joystick.h"
+#include "../Descriptors.h"
 #include "WaitTimes.h"
 #include "SimpleScripting.h"
 

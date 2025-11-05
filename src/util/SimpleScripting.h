@@ -1,11 +1,11 @@
 #ifndef _SimpleScripting_H_
 #define _SimpleScripting_H_
 
-#include "LUFAConfig.h"
 #include <LUFA.h>
-#include "Joystick.h"
-#include "Descriptors.h"
-#include "General.h"
+#include "../LUFAConfig.h"
+#include "../Joystick.h"
+#include "../Descriptors.h"
+#include "../General.h"
 #include "WaitTimes.h"
 
 using namespace std;
