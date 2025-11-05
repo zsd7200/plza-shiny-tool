@@ -12,7 +12,7 @@ Designed to be interfaced with using a 25 button (5x5) button matrix, but can be
 Enclosure: [5x5 macropad](https://www.thingiverse.com/thing:5239739) by _m40
 
 Parts:
- - 1x Arduino Pro Micro/Leonardo board (I used [one of these](https://www.amazon.com/dp/B0B6HYLC44) clone boards with USB-C, although USB-C to USB-C directly doesn't seem to work. USB-C to USB-A with a USB-C hub plugged into the console works well, though.)
+ - 1x Arduino Pro Micro/Leonardo board (I used [one of these](https://www.amazon.com/dp/B0B6HYLC44) clone boards with USB-C, although USB-C to USB-C directly doesn't seem to work. USB-C to USB-A with [a USB-C hub](https://www.amazon.com/dp/B08V3PHKR8) plugged into the console works well, though. USB-C to USB-A on the dock works perfectly as well.)
  - 25x any keyboard switches (I used [Outemu Switches](https://www.aliexpress.us/item/3256804099108371.html) from AliExpress--around $9 for 90 switches)
  - 25x [1N4148 diodes](https://www.amazon.com/dp/B07Q4F3Y5W) for the rows
  - 4x [any color LEDs](https://www.amazon.com/dp/B0CR886L92)
@@ -136,6 +136,7 @@ Special thanks to shinyquagsire's and progmem's reverseengineering work for the 
 Dean Camera for the LUFA Library
 
 zlittell, msf-xinput was very helpful for starting.
+
 
 
 
