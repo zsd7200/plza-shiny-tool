@@ -9,13 +9,32 @@ Designed to be interfaced with using a 25 button (5x5) button matrix, but can be
 
 ## Button Matrix Information
 
-I printed [this enclosure](https://www.thingiverse.com/thing:5239739) by _m40 and wired it together with [1N4148 diodes](https://www.amazon.com/dp/B07Q4F3Y5W) on the rows.
+Enclosure: [5x5 matrix](https://www.thingiverse.com/thing:5239739) by _m40
 
+Parts:
+ - 1x Arduino Pro Micro/Leonardo board (I used [one of these](https://www.amazon.com/dp/B0B6HYLC44) clone boards with USB-C, although USB-C to USB-C directly doesn't seem to work. USB-C to USB-A with a USB-C hub plugged into the console works well, though.)
+ - 25x any keyboard switches (I used [Outemu Switches](https://www.aliexpress.us/item/3256804099108371.html) from AliExpress--around $9 for 90 switches)
+ - 25x [1N4148 diodes](https://www.amazon.com/dp/B07Q4F3Y5W) for the rows
+ - 4x [any color LEDs](https://www.amazon.com/dp/B0CR886L92)
+ - (optional) 1x button for a reset button (I used [a button from this set](https://www.amazon.com/dp/B01E38OS7K), but any random button should be fine)
+ - wire, solder, soldering iron, flux, etc.
+ 
 I've included a diagram of my wiring in this repository, which can be found [here](https://github.com/zsd7200/plza-shiny-tool/blob/master/media/matrix.png).
 
-For the board, I used [one of these](https://www.amazon.com/dp/B0B6HYLC44) clone boards with USB-C. The USB-C to USB-C directly to the Switch doesn't seem to work, but connecting a USB-C hub to the Switch and using a USB-C to USB-A cable on the Arduino seems to work fine.
+You can use different pins or a different board, but you will have to adjust the code accordingly. Just change the `rowPins[ROWS]`, `colPins[COLS]`, and `ledPins[LEDS]` variables to match your row/column/LED pins in order.
 
-You can use different pins or a different board, but you will have to adjust the code accordingly. Just change the `rowPins[ROWS]` and `colPins[COLS]` variables to match your row/column pins in order.
+### Button Matrix Pages
+
+The button matrix uses 4 LEDs to indicate different "pages".
+
+The bottom row will always be the same 5 functions:
+1. Refresh Area
+2. Refresh Bench
+3. `simpleScript()`
+4. Previous Page
+5. Next Page
+
+The top 4 rows will change depending on what page you're on. You can consult the [Page ID table](https://github.com/zsd7200/plza-shiny-tool/blob/master/PAGE_ID.md) for more information.
 
 ## Building / Flashing / Usage Instructions
 
@@ -24,7 +43,7 @@ You can use different pins or a different board, but you will have to adjust the
 3. Open `plza-shiny-tool.ino` in the Arduino IDE, select your board type and serial port.
     - **If using a button matrix, skip to step 6. Otherwise, continue.**
 4. Set `buttonMatrix` to `false`.
-5. Set `zoneId` equal to the desired Wild Zone's number, or other ID from [this table](https://github.com/zsd7200/plza-shiny-tool/blob/master/ZONE_ID.md) (coming soon).
+5. Set `zoneId` equal to the desired Wild Zone's number, or other ID from [this table](https://github.com/zsd7200/plza-shiny-tool/blob/master/ZONE_ID.md) (more IDs coming soon).
 6. Upload code to board. You may need to press the reset button/bridge reset pins during upload.
 
 ## In-Game Setup Instructions
