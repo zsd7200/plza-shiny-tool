@@ -181,7 +181,7 @@ void loop() {
         wildZoneMacro.TwentyAlpha();
         break;
       case 101:
-        wildZoneMacro.TwentyAlpha();
+        wildZoneMacro.TwentySouth();
         break;
       case 110:
         specialMacro.Trade(1);
