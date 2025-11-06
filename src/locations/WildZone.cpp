@@ -1,142 +1,142 @@
 #include "WildZone.h"
 
-void WildZone::One(boolean switchTwo = true) {
+void WildZone::One() {
   Nothing(TOP_LEFT_DELAY);
   Right(1100);
   Down(1750);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Two(boolean switchTwo = true) {
+void WildZone::Two() {
   Nothing(TOP_LEFT_DELAY);
   Right(1100);
   Down(1200);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Three(boolean switchTwo = true) {
+void WildZone::Three() {
   Nothing(TOP_LEFT_DELAY);
   Right(900);
   Down(450);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Four(boolean switchTwo = true) {
+void WildZone::Four() {
   Nothing(TOP_LEFT_DELAY);
   Right(1050);
   Down(250);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Five(boolean switchTwo = true) {
+void WildZone::Five() {
   Nothing(TOP_LEFT_DELAY);
   Right(750);
   Down(1150);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Six(boolean switchTwo = true) {
+void WildZone::Six() {
   Nothing(TOP_LEFT_DELAY);
   Right(1750);
   Down(1000);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Seven(boolean switchTwo = true) {
+void WildZone::Seven() {
   Nothing(TOP_LEFT_DELAY);
   Right(500);
   Down(800);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Eight(boolean switchTwo = true) {
+void WildZone::Eight() {
   Nothing(TOP_LEFT_DELAY);
   Right(1300);
   Down(750);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Nine(boolean switchTwo = true) {
+void WildZone::Nine() {
   Nothing(TOP_LEFT_DELAY);
   Right(175);
   Down(975);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Ten(boolean switchTwo = true) {
+void WildZone::Ten() {
   Nothing(TOP_LEFT_DELAY);
   Right(200);
   Down(1250);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Eleven(boolean switchTwo = true) {
+void WildZone::Eleven() {
   Nothing(TOP_LEFT_DELAY);
   Right(1600);
   Down(1100);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Twelve(boolean switchTwo = true) {
+void WildZone::Twelve() {
   Nothing(TOP_LEFT_DELAY);
   Right(750);
   Down(1600);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Thirteen(boolean switchTwo = true) {
+void WildZone::Thirteen() {
   Nothing(TOP_LEFT_DELAY);
   Right(750);
   Down(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Fourteen(boolean switchTwo = true) {
+void WildZone::Fourteen() {
   Nothing(TOP_LEFT_DELAY);
   Right(150);
   Down(800);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Fifteen(boolean switchTwo = true) {
+void WildZone::Fifteen() {
   Nothing(TOP_LEFT_DELAY);
   Right(1500);
   Down(350);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Sixteen(boolean switchTwo = true) {
+void WildZone::Sixteen() {
   Nothing(TOP_LEFT_DELAY);
   Right(700);
   Down(1300);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Seventeen(boolean switchTwo = true) {
+void WildZone::Seventeen() {
   Nothing(TOP_LEFT_DELAY);
   Right(1450);
   Down(1450);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Eighteen(boolean switchTwo = true) {
+void WildZone::Eighteen() {
   Nothing(TOP_LEFT_DELAY);
   Right(290);
   Down(275);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Nineteen(boolean switchTwo = true) {
+void WildZone::Nineteen() {
   Nothing(TOP_LEFT_DELAY);
   Right(1550);
   Down(500);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZone::Twenty(boolean switchTwo = true) {
+void WildZone::Twenty() {
   Nothing(TOP_LEFT_DELAY);
   Right(900);
   Down(900);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 

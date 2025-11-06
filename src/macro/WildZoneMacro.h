@@ -8,6 +8,7 @@
 #include "../util/WaitTimes.h"
 #include "../util/SimpleScripting.h"
 #include "../util/WildZoneRefresh.h"
+#include "../locations/Building.h"
 #include "../locations/MapLocations.h"
 #include "../locations/PokemonCenter.h"
 #include "../locations/WildZone.h"
@@ -17,8 +18,10 @@ using namespace std;
 class WildZoneMacro : private Simple {
   public:
     void TwentyAlpha(boolean switchTwo = true);
+    void TwentySouth(boolean switchTwo = true);
 
   private:
+    Building building;
     MapLocations mapLocations;
     PokemonCenter pokemonCenter;
     WildZone wildZone;
@@ -26,6 +29,7 @@ class WildZoneMacro : private Simple {
 
     int twentyAlphaCount = 0;
     const int MAX_TWENTY_ALPHA_COUNT = 30;
+    bool needToTravel = true;
 };
 
 #endif

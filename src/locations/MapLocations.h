@@ -13,7 +13,7 @@ using namespace std;
 class MapLocations : private Simple {
   public:
     void TopLeft();
-    void Refresh(boolean switchTwo = true);
+    void Refresh();
     void Bench(boolean switchTwo = true, boolean goDown = true);
 };
 

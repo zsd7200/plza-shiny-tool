@@ -10,6 +10,8 @@
 
 using namespace std;
 
+extern boolean switchTwo;
+
 class Simple {
   public:
     Simple::Simple() {}
@@ -37,7 +39,7 @@ class Simple {
     void Nothing(unsigned long timeHeld, unsigned long afterDelay = 200);
     void BWait(unsigned long timeHeld, unsigned long afterDelay = 200);
     void Roll(int times = 1);
-    void MapTravel(boolean switchTwo = true);
+    void MapTravel();
 
   private:
     General general;

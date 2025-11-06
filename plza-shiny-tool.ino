@@ -1,3 +1,4 @@
+
 #include <LUFA.h>
 #include "src/LUFAConfig.h"
 #include "src/Joystick.h"
@@ -49,7 +50,7 @@ const int NEXT_PAGE = 998;
 bool hasTraveled;
 
 // after some testing, this might not be necessary
-bool switchTwo;
+bool switchTwo = true;
 
 // For writing simple scripts, use this function and call to it in the main.
 void simpleScript() {
@@ -61,7 +62,6 @@ void setup() {
   SetupHardware(); // Needed for LUFA
   GlobalInterruptEnable(); // Needed for LUFA
   hasTraveled = false;
-  switchTwo = true;
 
   // init button matrix
   for (int i = 0; i < COLS; i++) {
@@ -112,73 +112,76 @@ void loop() {
   if (hasTraveled && zoneId > 0) {
     switch (zoneId) {
       case 1:
-        wildZoneRefresh.One(switchTwo);
+        wildZoneRefresh.One();
         break;
       case 2:
-        wildZoneRefresh.Two(switchTwo);
+        wildZoneRefresh.Two();
         break;
       case 3:
-        wildZoneRefresh.Three(switchTwo);
+        wildZoneRefresh.Three();
         break;
       case 4:
-        wildZoneRefresh.Four(switchTwo);
+        wildZoneRefresh.Four();
         break;
       case 5:
-        wildZoneRefresh.Five(switchTwo);
+        wildZoneRefresh.Five();
         break;
       case 6:
-        wildZoneRefresh.Six(switchTwo);
+        wildZoneRefresh.Six();
         break;
       case 7:
-        wildZoneRefresh.Seven(switchTwo);
+        wildZoneRefresh.Seven();
         break;
       case 8:
-        wildZoneRefresh.Eight(switchTwo);
+        wildZoneRefresh.Eight();
         break;
       case 9:
-        wildZoneRefresh.Nine(switchTwo);
+        wildZoneRefresh.Nine();
         break;
       case 10:
-        wildZoneRefresh.Ten(switchTwo);
+        wildZoneRefresh.Ten();
         break;
       case 11:
-        wildZoneRefresh.Eleven(switchTwo);
+        wildZoneRefresh.Eleven();
         break;
       case 12:
-        wildZoneRefresh.Twelve(switchTwo);
+        wildZoneRefresh.Twelve();
         break;
       case 13:
-        wildZoneRefresh.Thirteen(switchTwo);
+        wildZoneRefresh.Thirteen();
         break;
       case 14:
-        wildZoneRefresh.Fourteen(switchTwo);
+        wildZoneRefresh.Fourteen();
         break;
       case 15:
-        wildZoneRefresh.Fifteen(switchTwo);
+        wildZoneRefresh.Fifteen();
         break;
       case 16:
-        wildZoneRefresh.Sixteen(switchTwo);
+        wildZoneRefresh.Sixteen();
         break;
       case 17:
-        wildZoneRefresh.Seventeen(switchTwo);
+        wildZoneRefresh.Seventeen();
         break;
       case 18:
-        wildZoneRefresh.Eighteen(switchTwo);
+        wildZoneRefresh.Eighteen();
         break;
       case 19:
-        wildZoneRefresh.Nineteen(switchTwo);
+        wildZoneRefresh.Nineteen();
         break;
       case 20:
-        wildZoneRefresh.Twenty(switchTwo);
+        wildZoneRefresh.Twenty();
         break;
       case 50:
-        mapLocations.Refresh(switchTwo);
+        mapLocations.Refresh();
         break;
       case 60:
-        mapLocations.Bench(switchTwo);
+        mapLocations.Bench();
         break;
       case 100:
-        wildZoneMacro.TwentyAlpha(switchTwo);
+        wildZoneMacro.TwentyAlpha();
+        break;
+      case 101:
+        wildZoneMacro.TwentyAlpha();
         break;
       case 110:
         specialMacro.Trade(1);
@@ -210,64 +213,64 @@ void travelTo(int zone) {
 
   switch (zone) {
     case 1:
-      wildZone.One(switchTwo);
+      wildZone.One();
       break;
     case 2:
-      wildZone.Two(switchTwo);
+      wildZone.Two();
       break;
     case 3:
-      wildZone.Three(switchTwo);
+      wildZone.Three();
       break;
     case 4:
-      wildZone.Four(switchTwo);
+      wildZone.Four();
       break;
     case 5:
-      wildZone.Five(switchTwo);
+      wildZone.Five();
       break;
     case 6:
-      wildZone.Six(switchTwo);
+      wildZone.Six();
       break;
     case 7:
-      wildZone.Seven(switchTwo);
+      wildZone.Seven();
       break;
     case 8:
-      wildZone.Eight(switchTwo);
+      wildZone.Eight();
       break;
     case 9:
-      wildZone.Nine(switchTwo);
+      wildZone.Nine();
       break;
     case 10:
-      wildZone.Ten(switchTwo);
+      wildZone.Ten();
       break;
     case 11:
-      wildZone.Eleven(switchTwo);
+      wildZone.Eleven();
       break;
     case 12:
-      wildZone.Twelve(switchTwo);
+      wildZone.Twelve();
       break;
     case 13:
-      wildZone.Thirteen(switchTwo);
+      wildZone.Thirteen();
       break;
     case 14:
-      wildZone.Fourteen(switchTwo);
+      wildZone.Fourteen();
       break;
     case 15:
-      wildZone.Fifteen(switchTwo);
+      wildZone.Fifteen();
       break;
     case 16:
-      wildZone.Sixteen(switchTwo);
+      wildZone.Sixteen();
       break;
     case 17:
-      wildZone.Seventeen(switchTwo);
+      wildZone.Seventeen();
       break;
     case 18:
-      wildZone.Eighteen(switchTwo);
+      wildZone.Eighteen();
       break;
     case 19:
-      wildZone.Nineteen(switchTwo);
+      wildZone.Nineteen();
       break;
     case 20:
-      wildZone.Twenty(switchTwo);
+      wildZone.Twenty();
       break;
     default:
       break;
@@ -314,7 +317,7 @@ void handleButton(int row, int col) {
 }
 
 bool shouldSkipHasTraveled(int zone) {
-  int skipZones[] = {60, 70, 100, 110, 111, 112, 113, 114, 999};
+  int skipZones[] = {60, 70, 100, 101, 110, 111, 112, 113, 114, 999};
   int numZones = sizeof(skipZones) / sizeof(skipZones[0]);
 
   for (int i = 0; i < numZones; i++) {
@@ -334,7 +337,7 @@ const int ZONE_MAP_PAGES[15][5][5] = {
       { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
     },
     {
-      { 100, 100, 100, 100, 100 },
+      { 100, 101, 0, 0, 0 },
       { 110, 111, 112, 113, 114 },
       { 0, 0, 0, 0, 0 },
       { 0, 0, 0, 0, 0 },

@@ -1,165 +1,165 @@
 #include "WildZoneRefresh.h"
 
-void WildZoneRefresh::One(boolean switchTwo = true) {
+void WildZoneRefresh::One() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Left(125);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Two(boolean switchTwo = true) {
+void WildZoneRefresh::Two() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Up(50);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Three(boolean switchTwo = true) {
+void WildZoneRefresh::Three() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Up(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Four(boolean switchTwo = true) {
+void WildZoneRefresh::Four() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Right(100);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Five(boolean switchTwo = true) {
+void WildZoneRefresh::Five() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Up(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Six(boolean switchTwo = true) {
+void WildZoneRefresh::Six() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Up(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Seven(boolean switchTwo = true) {
+void WildZoneRefresh::Seven() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Left(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Eight(boolean switchTwo = true) {
+void WildZoneRefresh::Eight() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Left(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Nine(boolean switchTwo = true) {
+void WildZoneRefresh::Nine() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Up(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Ten(boolean switchTwo = true) {
+void WildZoneRefresh::Ten() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Right(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Eleven(boolean switchTwo = true) {
+void WildZoneRefresh::Eleven() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Up(75);
   Left(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Twelve(boolean switchTwo = true) {
+void WildZoneRefresh::Twelve() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Left(100);
   Up(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Thirteen(boolean switchTwo = true) {
+void WildZoneRefresh::Thirteen() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Left(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Fourteen(boolean switchTwo = true) {
+void WildZoneRefresh::Fourteen() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Down(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Fifteen(boolean switchTwo = true) {
+void WildZoneRefresh::Fifteen() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Up(75);
   Left(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Sixteen(boolean switchTwo = true) {
+void WildZoneRefresh::Sixteen() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Up(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Seventeen(boolean switchTwo = true) {
+void WildZoneRefresh::Seventeen() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Up(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Eighteen(boolean switchTwo = true) {
+void WildZoneRefresh::Eighteen() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Down(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Nineteen(boolean switchTwo = true) {
+void WildZoneRefresh::Nineteen() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Down(75);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 
-void WildZoneRefresh::Twenty(boolean switchTwo = true) {
+void WildZoneRefresh::Twenty() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Left(100);
   Nothing(50);
-  MapTravel(switchTwo);
+  MapTravel();
 };
 

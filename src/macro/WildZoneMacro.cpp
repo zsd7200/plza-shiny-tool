@@ -20,7 +20,7 @@ void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
         Plus(100);
         Nothing(MAP_LOAD_WAIT);
         Down(150);
-        MapTravel(switchTwo);
+        MapTravel();
         BWait(250);
     }
 
@@ -52,10 +52,39 @@ void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
 
     // refresh zone 20
     BWait(250);
-    //wildZoneRefresh.Twenty(switchTwo); // doesn't work here for some reason, need to investigate further
+    //wildZoneRefresh.Twenty(); // doesn't work here for some reason, need to investigate further
     Plus(100);
     Nothing(MAP_LOAD_WAIT);
     Left(100);
     Nothing(50);
-    MapTravel(switchTwo);
+    MapTravel();
+}
+
+void WildZoneMacro::TwentySouth(boolean switchTwo = true) {
+    // travel to zone
+    if (needToTravel) {
+        needToTravel = false;
+        mapLocations.TopLeft();
+        building.CentricoPlaza();
+        BWait(250);
+    }
+
+    // go to gate
+    Roll(2);
+    Left(850);
+    Up(50);
+
+    // enter gate
+    A(50);
+    Nothing(GATE_WAIT);
+
+    // roll to ensure all spawns appear
+    Roll(6);
+
+    // refresh
+    BWait(250);
+    Plus(100);
+    Nothing(MAP_LOAD_WAIT);
+    Down(100);
+    MapTravel();
 }

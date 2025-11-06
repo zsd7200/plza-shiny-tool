@@ -98,7 +98,7 @@ void Simple::Roll(int times = 1) {
     }
 }
 
-void Simple::MapTravel(boolean switchTwo = true) {
+void Simple::MapTravel() {
   A(100);
   Nothing(TEXT_WAIT);
   A(100);

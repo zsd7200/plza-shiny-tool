@@ -15,7 +15,7 @@ void MapLocations::TopLeft() {
   Left(2000);
 };
 
-void MapLocations::Refresh(boolean switchTwo = true) {
+void MapLocations::Refresh() {
   Plus(100);
   Nothing(MAP_LOAD_WAIT);
   Down(50);

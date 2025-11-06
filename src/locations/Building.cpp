@@ -61,5 +61,8 @@ void Building::RestaurantLeNah() {
 }
 
 void Building::CentricoPlaza() {
-
+  Nothing(TOP_LEFT_DELAY);
+  Right(900);
+  Down(1050);
+  MapTravel();
 }
