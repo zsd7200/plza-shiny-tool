@@ -314,7 +314,7 @@ void handleButton(int row, int col) {
 }
 
 bool shouldSkipHasTraveled(int zone) {
-  int skipZones[] = {60, 70, 110, 111, 112, 113, 114, 999};
+  int skipZones[] = {60, 70, 100, 110, 111, 112, 113, 114, 999};
   int numZones = sizeof(skipZones) / sizeof(skipZones[0]);
 
   for (int i = 0; i < numZones; i++) {
