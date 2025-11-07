@@ -31,3 +31,11 @@ For any macros without specfic instructions, assume the General instructions app
 4. If done correctly, trades should begin and the macro should disconnect the trade session upon completion.
 
 **Note**: Any trade macro above the "Trade 1 Pokémon" macro assumes you are at the top-left (or at least the leftmost) space in any given box (not counting party Pokémon).
+
+### Remove Items from Boxed Pokémon Macro
+1. Open Boxes and go to desired box.
+2. Unplug/disconnect all other controllers/attach Joy-Cons to console.
+3. Plug in Arduino.
+4. If using button matrix, push appropriate button.
+
+**Note**: All Pokémon in the box need to be holding items for the macro to work correctly.

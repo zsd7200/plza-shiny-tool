@@ -183,6 +183,9 @@ void loop() {
       case 101:
         wildZoneMacro.TwentySouth();
         break;
+      case 104:
+        specialMacro.RemoveItems();
+        break;
       case 110:
         specialMacro.Trade(1);
         break;
@@ -317,7 +320,7 @@ void handleButton(int row, int col) {
 }
 
 bool shouldSkipHasTraveled(int zone) {
-  int skipZones[] = {60, 70, 100, 101, 110, 111, 112, 113, 114, 999};
+  int skipZones[] = {60, 70, 100, 101, 104, 110, 111, 112, 113, 114, 999};
   int numZones = sizeof(skipZones) / sizeof(skipZones[0]);
 
   for (int i = 0; i < numZones; i++) {
@@ -337,7 +340,7 @@ const int ZONE_MAP_PAGES[15][5][5] = {
       { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
     },
     {
-      { 100, 101, 0, 0, 0 },
+      { 100, 101, 0, 0, 104 },
       { 110, 111, 112, 113, 114 },
       { 0, 0, 0, 0, 0 },
       { 0, 0, 0, 0, 0 },

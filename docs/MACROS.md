@@ -51,3 +51,8 @@ Box 2:
 `x` - Covered by the "Trade 12" macro, as well as all letters prior.
 `y` - Covered by the "Trade 30" macro, as well as all letters prior.
 `z` - Covered by the "Trade 60" macro, as well as all letters prior.
+
+### Remove Items from Boxed Pokémon Macro
+Removes items from Boxed Pokémon.
+
+Any remove item macro assumes you are at the top-left (or at least the leftmost) space in any given box (not counting party Pokémon).

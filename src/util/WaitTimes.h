@@ -13,5 +13,7 @@ extern unsigned long GATE_WAIT;
 extern unsigned long TOP_LEFT_DELAY;
 extern unsigned long TRADE_WAIT;
 extern unsigned long NEXT_BOX_WAIT;
+extern unsigned long SEL_BOX_WAIT;
+extern unsigned long DOWN_SEL_WAIT;
 
 #endif

@@ -17,9 +17,11 @@ using namespace std;
 class SpecialMacro : private Simple {
   public:
     void Trade(int numberToTrade = 1);
+    void RemoveItems(int numberToRemove = 30);
 
   private:
-    int currTradeCount = 0;
+    int currCount = 0;
+    void BoxMovement(int finishNumber, boolean closeOut = true);
 };
 
 #endif
