@@ -1,7 +1,7 @@
 # plza-shiny-tool
 
 A fork of [ironandstee1's swemu-plus-plus](https://github.com/ironandstee1/swemu-plus-plus) to shiny hunt using the fast-travel
-method in Pokémon Legends: Z-A.
+method and macros in Pokémon Legends: Z-A.
 
 This is only compatible with ATMega32U4 based boards (Arduino Leonardo, Arduino Pro Micro) and compatibility for other boards is not planned.
 
@@ -16,6 +16,7 @@ Parts:
  - 25x any keyboard switches (I used [Outemu Switches](https://www.aliexpress.us/item/3256804099108371.html) from AliExpress--around $3.50 for 30 switches)
  - 25x [1N4148 diodes](https://www.amazon.com/dp/B07Q4F3Y5W) for the rows
  - 4x [any color LEDs](https://www.amazon.com/dp/B0CR886L92)
+ - 4x [100Ω resistors](https://www.amazon.com/dp/B0F4P352BB)
  - (optional) 1x button for a reset button (I used [a button from this set](https://www.amazon.com/dp/B01E38OS7K), but any random button should be fine)
  - wire, solder, soldering iron, flux, etc.
  
@@ -93,6 +94,7 @@ Special thanks to shinyquagsire's and progmem's reverseengineering work for the 
 Dean Camera for the LUFA Library
 
 zlittell, msf-xinput was very helpful for starting.
+
 
 
 
