@@ -2,7 +2,7 @@
 
 void WildZoneMacro::ThirteenRoll(boolean switchTwo = true) {
     if (!maxCourseCorrectCount) {
-        maxCourseCorrectCount = 15;
+        maxCourseCorrectCount = 5;
     }
 
     // travel to zone
