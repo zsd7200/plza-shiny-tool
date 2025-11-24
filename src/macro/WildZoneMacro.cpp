@@ -1,12 +1,12 @@
 #include "WildZoneMacro.h"
 
 void WildZoneMacro::ThirteenRoll(boolean switchTwo = true) {
-    if (!maxCourseCorrectCount) {
+    if (maxCourseCorrectCount == 0) {
         maxCourseCorrectCount = 5;
     }
 
     // travel to zone
-    if (needToTravel || courseCorrectCount == (maxCourseCorrectCount ?: DEFAULT_MAX_COURSE_CORRECT_COUNT)) {
+    if (needToTravel || courseCorrectCount == ((maxCourseCorrectCount != 0) ? maxCourseCorrectCount : DEFAULT_MAX_COURSE_CORRECT_COUNT)) {
         needToTravel = false;
         courseCorrectCount = 0;
         wildZone.Thirteen();
