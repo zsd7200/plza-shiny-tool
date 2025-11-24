@@ -12,7 +12,9 @@ Specific information on what each of the more in-depth macros do. These **are no
 8. Reset day/night cycle.
 9. Repeat steps 3-5 30 times again.
 
-**Note**: This _can_ be used in conjunction with the [Alpha Overload Method](https://www.youtube.com/watch?v=OuX9lfo_bKA) for more spawns at once.
+**Notes**: 
+- This _can_ be used in conjunction with the [Alpha Overload Method](https://www.youtube.com/watch?v=OuX9lfo_bKA) for more spawns at once.
+- This will fly back to Centrico Pokémon Center every 30 attempts to reset the day/night cycle and as a method of course correction if something goes awry.
 
 ### Wild Zone 20 South Macro
 1. Fly to Centrico Plaza.
@@ -20,6 +22,20 @@ Specific information on what each of the more in-depth macros do. These **are no
 3. Enter the gate.
 4. Enter far enough to force spawns for both standard spawners.
 5. Repeat steps 1-4.
+
+**Notes**:
+- This macro is still in development and needs better testing.
+
+### Wild Zone 13 Roll Macro
+1. Fly to Wild Zone 13.
+2. Enter the gate.
+3. Roll in 8 times to ensure all Pokémon have spawned in.
+4. Roll out 8 times.
+5. Leave the gate.
+6. Repeat steps 1-5.
+
+**Notes**:
+- This macro will re-center itself after 30 attempts as a method of course correction if something goes awry.
 
 ### Trade Macro
 Trades Pokémon with another macro user.

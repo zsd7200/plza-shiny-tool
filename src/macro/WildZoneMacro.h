@@ -17,6 +17,7 @@ using namespace std;
 
 class WildZoneMacro : private Simple {
   public:
+    void ThirteenRoll(boolean switchTwo = true);
     void TwentyAlpha(boolean switchTwo = true);
     void TwentySouth(boolean switchTwo = true);
 
@@ -29,6 +30,8 @@ class WildZoneMacro : private Simple {
 
     int twentyAlphaCount = 0;
     const int MAX_TWENTY_ALPHA_COUNT = 30;
+    int courseCorrectCount = 0;
+    const int MAX_COURSE_CORRECT_COUNT = 20;
     bool needToTravel = true;
 };
 

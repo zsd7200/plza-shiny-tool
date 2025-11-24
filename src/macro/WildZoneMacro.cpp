@@ -1,5 +1,43 @@
 #include "WildZoneMacro.h"
 
+void WildZoneMacro::ThirteenRoll(boolean switchTwo = true) {
+    // travel to zone
+    if (needToTravel || courseCorrectCount == MAX_COURSE_CORRECT_COUNT) {
+        needToTravel = false;
+        courseCorrectCount = 0;
+        wildZone.Thirteen();
+        BWait(250);
+    }
+
+    // roll to gate
+    Roll();
+    A(50);
+    Nothing(GATE_WAIT);
+
+    // roll in
+    Roll(8);
+
+    // roll out
+    Down(50);
+    Roll(8);
+
+    // leave
+    A(50);
+    Nothing(GATE_WAIT);
+
+    // increment count to reset player if something goes awry or timing gets messed up
+    courseCorrectCount++;
+
+    // refresh zone 13
+    BWait(250);
+    //wildZoneRefresh.Thirteen(); // doesn't work here for some reason, need to investigate further
+    Plus(100);
+    Nothing(MAP_LOAD_WAIT);
+    Left(75);
+    Nothing(50);
+    MapTravel();
+}
+
 void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
     // check if fresh cycle
     if (twentyAlphaCount == 0) {
@@ -60,6 +98,7 @@ void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
     MapTravel();
 }
 
+// doesn't work super great
 void WildZoneMacro::TwentySouth(boolean switchTwo = true) {
     // travel to zone
     if (needToTravel) {

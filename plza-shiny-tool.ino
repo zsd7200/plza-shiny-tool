@@ -183,6 +183,9 @@ void loop() {
       case 101:
         wildZoneMacro.TwentySouth();
         break;
+      case 102:
+        wildZoneMacro.ThirteenRoll();
+        break;
       case 104:
         specialMacro.RemoveItems();
         break;
@@ -340,7 +343,7 @@ const int ZONE_MAP_PAGES[15][5][5] = {
       { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
     },
     {
-      { 100, 101, 0, 0, 104 },
+      { 100, 101, 102, 0, 104 },
       { 110, 111, 112, 113, 114 },
       { 0, 0, 0, 0, 0 },
       { 0, 0, 0, 0, 0 },
@@ -441,8 +444,10 @@ const int ZONE_MAP_PAGES[15][5][5] = {
 
 void handlePage(int adjust) {
   currPage += adjust;
-  if (currPage == MAX_PAGES || currPage < 0) {
+  if (currPage == MAX_PAGES) {
     currPage = 0;
+  } else if (currPage < 0) {
+    currPage = MAX_PAGES - 1;
   }
 
   for (int i = 0; i < LEDS; i++) {

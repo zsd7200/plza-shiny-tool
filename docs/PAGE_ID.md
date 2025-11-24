@@ -15,7 +15,7 @@ Each "Page" has 20 configurable buttons (shown as a table below) with a static r
 
 |             |             |             |             |             |
 |-------------|-------------|-------------|-------------|-------------|
-| Wild Zone 20 Alpha Macro | Wild Zone 20 South Macro | n/a | n/a | Remove Items from 30 Boxed Pokémon |
+| Wild Zone 20 Alpha Macro | Wild Zone 20 South Macro | Wild Zone 13 Roll Macro | n/a | Remove Items from 30 Boxed Pokémon |
 | [Trade 1 Pokémon](https://github.com/zsd7200/plza-shiny-tool/blob/master/docs/INSTRUCTIONS.md#trade-macro) | [Trade 6 Pokémon](https://github.com/zsd7200/plza-shiny-tool/blob/master/docs/INSTRUCTIONS.md#trade-macro) | [Trade 12 Pokémon](https://github.com/zsd7200/plza-shiny-tool/blob/master/docs/INSTRUCTIONS.md#trade-macro) | [Trade 30 Pokémon](https://github.com/zsd7200/plza-shiny-tool/blob/master/docs/INSTRUCTIONS.md#trade-macro) | [Trade 60 Pokémon](https://github.com/zsd7200/plza-shiny-tool/blob/master/docs/INSTRUCTIONS.md#trade-macro) |
 | n/a | n/a | n/a | n/a | n/a |
 | n/a | n/a | n/a | n/a | n/a |

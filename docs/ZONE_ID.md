@@ -25,6 +25,9 @@
 | 50            | Page ALL           | 4,0               | Refresh Map Location (Pokémon Center, Building, Cafe) |
 | 60            | Page ALL           | 4,1               | Refresh Bench |
 | 100           | Page 2             | 0,0               | Wild Zone 20 Alpha Macro |
+| 101           | Page 2             | 0,1               | Wild Zone 20 South Macro |
+| 102           | Page 2             | 0,2               | Wild Zone 13 Roll Macro |
+| 104           | Page 2             | 0,2               | Remove Items from 30 Boxed Pokémon Macro |
 | 110           | Page 2             | 1,0               | Trade 1 Pokémon |
 | 111           | Page 2             | 1,1               | Trade 6 Pokémon |
 | 112           | Page 2             | 1,2               | Trade 12 Pokémon |

@@ -2,7 +2,7 @@
 For any macros without specfic instructions, assume the General instructions apply.
 
 ### General
-1. Ensure that the game is not about to enter a new day/night cycle.
+1. Ensure that the game is not about to enter a new day/night cycle and you are not actively being attacked by any Pokémon or trainer.
 2. Unplug/disconnect all other controllers/attach Joy-Cons to console.
 3. Plug in Arduino.
     - If not using a button matrix, the Arduino should already start activating the macro for the set [Zone ID](https://github.com/zsd7200/plza-shiny-tool/blob/master/docs/ZONE_ID.md).
