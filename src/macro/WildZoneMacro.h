@@ -32,7 +32,7 @@ class WildZoneMacro : private Simple {
     const int MAX_TWENTY_ALPHA_COUNT = 30;
     int courseCorrectCount = 0;
     int maxCourseCorrectCount = 0;
-    const int DEFAULT_MAX_COURSE_CORRECT_COUNT = 20;
+    const int MAX_THIRTEEN_COURSE_CORRECT_COUNT = 5;
     bool needToTravel = true;
 };
 

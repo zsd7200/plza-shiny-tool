@@ -1,14 +1,8 @@
 #include "WildZoneMacro.h"
 
 void WildZoneMacro::ThirteenRoll(boolean switchTwo = true) {
-    if (maxCourseCorrectCount == 0) {
-        maxCourseCorrectCount = 5;
-    }
-
     // travel to zone
-    if (needToTravel || courseCorrectCount == ((maxCourseCorrectCount != 0) ? maxCourseCorrectCount : DEFAULT_MAX_COURSE_CORRECT_COUNT)) {
-        needToTravel = false;
-        courseCorrectCount = 0;
+    if (courseCorrectCount == 0) {
         wildZone.Thirteen();
         BWait(250);
     }
@@ -31,6 +25,10 @@ void WildZoneMacro::ThirteenRoll(boolean switchTwo = true) {
 
     // increment count to reset player if something goes awry or timing gets messed up
     courseCorrectCount++;
+    if (courseCorrectCount == MAX_THIRTEEN_COURSE_CORRECT_COUNT) {
+        courseCorrectCount = 0;
+        return;
+    }
 
     // refresh zone 13
     BWait(250);
