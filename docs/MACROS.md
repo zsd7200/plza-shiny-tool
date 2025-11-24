@@ -35,7 +35,7 @@ Specific information on what each of the more in-depth macros do. These **are no
 6. Repeat steps 1-5.
 
 **Notes**:
-- This macro will re-center itself after 30 attempts as a method of course correction if something goes awry.
+- This macro will re-center itself after 15 attempts as a method of course correction if something goes awry.
 
 ### Trade Macro
 Trades Pokémon with another macro user.
