@@ -1,6 +1,6 @@
 #include "WildZoneMacro.h"
 
-void WildZoneMacro::ThirteenRoll(boolean switchTwo = true) {
+void WildZoneMacro::ThirteenRoll() {
     // travel to zone
     if (courseCorrectCount == 0) {
         wildZone.Thirteen();
@@ -40,7 +40,7 @@ void WildZoneMacro::ThirteenRoll(boolean switchTwo = true) {
     MapTravel();
 }
 
-void WildZoneMacro::SixteenRoll(boolean switchTwo = true) {
+void WildZoneMacro::SixteenRoll() {
     if (needToTravel) {
         needToTravel = false;
         wildZone.Sixteen();
@@ -58,7 +58,7 @@ void WildZoneMacro::SixteenRoll(boolean switchTwo = true) {
     MapTravel();
 }
 
-void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
+void WildZoneMacro::TwentyAlpha() {
     // check if fresh cycle
     if (twentyAlphaCount == 0) {
         // center, then travel to centrico center
@@ -71,7 +71,7 @@ void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
         Roll();
         Up(50);
         Roll(2);
-        mapLocations.Bench(switchTwo, false);
+        mapLocations.Bench(false);
         BWait(500);
 
         // fly to zone 20
@@ -119,7 +119,7 @@ void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
 }
 
 // doesn't work super great
-void WildZoneMacro::TwentySouth(boolean switchTwo = true) {
+void WildZoneMacro::TwentySouth() {
     // travel to zone
     if (needToTravel) {
         needToTravel = false;

@@ -17,10 +17,10 @@ using namespace std;
 
 class WildZoneMacro : private Simple {
   public:
-    void ThirteenRoll(boolean switchTwo = true);
-    void SixteenRoll(boolean switchTwo = true);
-    void TwentyAlpha(boolean switchTwo = true);
-    void TwentySouth(boolean switchTwo = true);
+    void ThirteenRoll();
+    void SixteenRoll();
+    void TwentyAlpha();
+    void TwentySouth();
 
   private:
     Building building;

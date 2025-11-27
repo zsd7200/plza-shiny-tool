@@ -26,7 +26,7 @@ void MapLocations::Refresh() {
   Nothing(switchTwo ? SWITCH_TWO_WAIT : SWITCH_ONE_WAIT);
 };
 
-void MapLocations::Bench(boolean switchTwo = true, boolean goDown = true) {
+void MapLocations::Bench(boolean goDown = true) {
   B(50); // clear out map if open
   B(50);
   B(50);

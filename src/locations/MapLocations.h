@@ -14,7 +14,7 @@ class MapLocations : private Simple {
   public:
     void TopLeft();
     void Refresh();
-    void Bench(boolean switchTwo = true, boolean goDown = true);
+    void Bench(boolean goDown = true);
 };
 
 #endif
