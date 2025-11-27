@@ -186,6 +186,9 @@ void loop() {
       case 102:
         wildZoneMacro.ThirteenRoll();
         break;
+      case 103:
+        wildZoneMacro.SixteenRoll();
+        break;
       case 104:
         specialMacro.RemoveItems();
         break;
@@ -343,7 +346,7 @@ const int ZONE_MAP_PAGES[15][5][5] = {
       { 50, 60, 999, PREV_PAGE, NEXT_PAGE },
     },
     {
-      { 100, 101, 102, 0, 104 },
+      { 100, 101, 102, 103, 104 },
       { 110, 111, 112, 113, 114 },
       { 0, 0, 0, 0, 0 },
       { 0, 0, 0, 0, 0 },

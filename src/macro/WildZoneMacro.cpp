@@ -40,6 +40,24 @@ void WildZoneMacro::ThirteenRoll(boolean switchTwo = true) {
     MapTravel();
 }
 
+void WildZoneMacro::SixteenRoll(boolean switchTwo = true) {
+    if (needToTravel) {
+        needToTravel = false;
+        wildZone.Sixteen();
+        BWait(250);
+    }
+
+    // roll to gate
+    Roll();
+    A(50);
+    Nothing(GATE_WAIT);
+
+    // immediately open map and refresh 16
+    Plus(100);
+    Nothing(MAP_LOAD_WAIT);
+    MapTravel();
+}
+
 void WildZoneMacro::TwentyAlpha(boolean switchTwo = true) {
     // check if fresh cycle
     if (twentyAlphaCount == 0) {
